@@ -1,8 +1,5 @@
-# ***Project README Example***
----------------------------------
----------------------------------
 
-# Project JOHN
+# Final Project 
 ---------------------------------
 ## We are deployed on _____
 
@@ -12,18 +9,11 @@
 ## Web Application
 ***[Explain your app, should be at least a paragraph. What does it do? Why should I use? Sell your product!]***
 
-The web application consists of a frontend written in Razor views, HTML, CSS,
-Bootstrap, Popper, and jQuery. The backend was written in C# using ASP.NET Core 2, Entity Framework Core, and the MVC framework.
+The application is a communication platform for realtime chat between two or more users. We utilized NodeJS, JavaScript, Google Translate API, and MongoDB.
 
-An interface is provided to create new blog
-posts, view existing blog posts, edit existing blog posts, delete existing
-blog posts, and search by both keywords and usernames. All blog posts can be
-enriched using Azure Language Services (part of Microsoft's Cognitive Services
-suite), Bing Image API, and Parallel Dots (for automated tagging of posts via
-key phrases detected within the post's body). Image enrichments can be added
-based on the overall sentiment score (a range 0.0 - 1.0 related to the mood
-of the post) and key phrases / keywords detected in the posts. Optionally, users
-can choose to opt-out of these features for privacy or data collection concerns.
+Users are able to create a username, specify a language, and then enter a group chat. They can chat through command line to other users in the same chat server. We have utilized Google Translate API to translate one user's preferred language to the other user's preferred language. Essentially, users can communicate easily and effectively in multiple languages at the same time.
+
+We have expanded this project to persist messages into a mongo database. We display the last 5 messages in the chat server to a user upon initial login.
 
 ---------------------------------
 
@@ -31,7 +21,12 @@ can choose to opt-out of these features for privacy or data collection concerns.
 Microsoft Visual Studio
 
 - NodeJS
-- Express 
+- Express
+- Socket.io
+- Google Translate API
+- MongoDB
+- React
+- Auth0 
 
 
 ---------------------------------
@@ -90,10 +85,11 @@ npm start
 
 
 ## Authors
-Albus Dumbbledore
-Igor Karkaroff
-Minerva McGonagall
-Leta Lestrange
-Gellert Grindelwald
+Nadya Ilinskaya
+James Dunn
+Anna Li
+Morgan T Shaw
+Martin Balke
+Meron Sibani
 
 ------------------------------
