@@ -85,11 +85,11 @@ npm start
 
 
 ## Authors
-Nadya Ilinskaya
-James Dunn
-Anna Li
-Morgan T Shaw
-Martin Balke
-Meron Sibani
+- Nadya Ilinskaya
+- James Dunn
+- Anna Li
+- Morgan T Shaw
+- Martin Balke
+- Meron Sibani
 
 ------------------------------
