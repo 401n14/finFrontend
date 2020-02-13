@@ -1,0 +1,9 @@
+@mixin border($px, $color, $rad) {
+    border: $px solid $color;
+    border-radius: $rad;
+  }
+  
+  @mixin wordLetterSpacing() {
+    word-spacing: 2px;
+    letter-spacing: 1px;
+  }

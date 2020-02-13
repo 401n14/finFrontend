@@ -1,13 +1,12 @@
-import React from 'react';
+import React from "react";
+import Chat from "./components/Chat";
 
+import "./styles/styles.scss";
 
-
-function App() {
+export default function App() {
   return (
     <div className="App">
-     <p>Chat App</p>
+      <Chat />
     </div>
   );
 }
-
-export default App;
