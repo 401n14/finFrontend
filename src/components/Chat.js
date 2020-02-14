@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "../styles/chat.scss";
 import useSockets from "./useSockets";
+const fetch = require('node-fetch');
+
+const apiKey = process.env.GOOGLE_API_KEY;
+
+let options = {
+  concurrentLimit: 20,
+  requestOptions: {},
+};
+
+const googleTranslate = require('google-translate')(apiKey, options);
+
 
 function Chat() {
   const [name, setName] = useState(null);
@@ -13,15 +24,12 @@ function Chat() {
     "broadcast"
   );
 
-const apiKey = process.env.GOOGLE_API_KEY || 'AIzaSyBux-_pW1VFfVGs4s4CbmFgFXypGu1GIc8';
 
-let options = {
-  concurrentLimit: 20,
-  requestOptions: {},
-};
-
-const googleTranslate = require('google-translate')(apiKey, options);
-
+  const getTranslation = async () => {
+      let res = await fetch('http://localhost:3000/detect?language=' + language);
+      let json = await res.text();
+      console.log('JSON RESULTS: ', json);
+  }
 
   const sendGreeting = () => {
     if (name) setWelcome(`Hi ${name}! Welcome to the Chat!`);
@@ -55,6 +63,7 @@ const googleTranslate = require('google-translate')(apiKey, options);
   const setUserName = e => {
     e.preventDefault();
     sendGreeting();
+    getTranslation();
   };
 
   useEffect(() => {
@@ -72,7 +81,7 @@ const googleTranslate = require('google-translate')(apiKey, options);
                       setGroupMessage(`${socketVal.name}:  ${translation.translatedText}`);
             });
         }
-  }, [socketVal, googleTranslate, language]);
+  }, [socketVal, language]);
 
   return (
     <div className="Chat">
