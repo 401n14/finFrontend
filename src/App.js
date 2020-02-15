@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Home from "./views/Home";
 import Profile from "./views/Profile";
+import Chat from "./views/Chat";
 import { useAuth0 } from "./react-auth0-spa";
 import history from "./utils/history";
 
@@ -32,6 +33,7 @@ const App = () => {
         <Container className="flex-grow-1 mt-5">
           <Switch>
             <Route path="/" exact component={Home} />
+            <PrivateRoute path="/chat" component={Chat} />
             <PrivateRoute path="/profile" component={Profile} />
           </Switch>
         </Container>
