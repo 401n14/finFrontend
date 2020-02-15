@@ -6,8 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import { Auth0Provider } from "./react-auth0-spa";
 import config from "./auth_config.json";
 import history from "./utils/history";
-import { Provider } from "react-redux";
-import store from "./components/store/store";
+
 
 const onRedirectCallback = appState => {
   history.push(
@@ -24,10 +23,7 @@ ReactDOM.render(
     redirect_uri={window.location.origin}
     onRedirectCallback={onRedirectCallback}
   >
-    <Provider store={store}>
     <App />
-      </Provider>  
-
   </Auth0Provider>,
   document.getElementById("root")
 );
