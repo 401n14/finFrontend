@@ -1,23 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../styles/chat.scss";
 import useSockets from "./useSockets";
 const fetch = require('node-fetch');
-
-const apiKey = process.env.GOOGLE_API_KEY;
-
-let options = {
-  concurrentLimit: 20,
-  requestOptions: {},
-};
-
-const googleTranslate = require('google-translate')(apiKey, options);
-
 
 function Chat() {
   const [name, setName] = useState(null);
   const [welcome, setWelcome] = useState("Welcome!");
   const [message, setMessage] = useState(null);
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState("English");
+  const [translation, setTranslation] = useState("en");
   const [groupMessage, setGroupMessage] = useState(null);
   const { socket, socketVal, isConnected } = useSockets(
     "https://jamesdunn-lab23.herokuapp.com/",
@@ -25,11 +16,20 @@ function Chat() {
   );
 
 
-  const getTranslation = async () => {
-      let res = await fetch('http://localhost:3000/detect?language=' + language);
+  const getLanguage = useCallback (
+      async () => {
+      let res = await fetch('https://translation-server.herokuapp.com/detect?language=' + language);
       let json = await res.text();
-      console.log('JSON RESULTS: ', json);
-  }
+      setTranslation(json);
+  }, [language]);
+
+  const translateMessage = useCallback(
+      async data => {
+      let res = await fetch('https://translation-server.herokuapp.com/translate?message=' + data.message + '&translation=' + data.translation);
+      let json = await res.text();
+      socketVal.message = await json;
+      setGroupMessage(`${socketVal.name}:  ${socketVal.message}`);
+  }, [socketVal.message, socketVal.name]);
 
   const sendGreeting = () => {
     if (name) setWelcome(`Hi ${name}! Welcome to the Chat!`);
@@ -40,17 +40,6 @@ function Chat() {
       e.target.className === "name-input" ? setUserName(e) : sendMessage(e);
     }
   };
-
-  const selectLanguage = async e => {
-    await googleTranslate.detectLanguage(e.target.value, async function(err, detection) {
-        // if unable to detect a language >> default to english
-        if (!detection) {
-          setLanguage('en');
-        } else {
-          setLanguage(detection.language);
-        }
-  });
-}
 
   const sendMessage = e => {
     e.preventDefault();
@@ -63,25 +52,20 @@ function Chat() {
   const setUserName = e => {
     e.preventDefault();
     sendGreeting();
-    getTranslation();
   };
 
   useEffect(() => {
+    getLanguage();
+  }, [getLanguage, language])
+
+  useEffect(() => {
       if (socketVal.name && socketVal.message) {
-        googleTranslate.translate(socketVal.message, language, function (err, translation) {
-            /**
-                       * sends the translated message consisting of '{user: user, color: data.color, message: translation.translatedText}'
-                       * @event message
-                       * @param {string} message message event
-                       * @param {object} translationData {user: object, color: string, message, string}
-                       * @param {object} user user object
-                       * @param {string} data.color color from the data object
-                       * @param {string} translation.translatedText translated version of the text
-                       */
-                      setGroupMessage(`${socketVal.name}:  ${translation.translatedText}`);
-            });
+          (async () => {
+        await translateMessage({message: socketVal.message, translation});
+          })();
+        
         }
-  }, [socketVal, language]);
+  }, [socketVal, translateMessage, translation]);
 
   return (
     <div className="Chat">
@@ -105,7 +89,9 @@ function Chat() {
         />
       </div>
       <div>
-        <select onChange={selectLanguage}>
+        <select onChange={e => {
+            setLanguage(e.target.value);
+        }}>
           <option>Select Language</option>
           <option>English</option>
           <option>Espanol</option>
