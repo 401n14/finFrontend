@@ -8,6 +8,7 @@ function Chat() {
   const [name, setName] = useState(null);
   const [welcome, setWelcome] = useState("Welcome!");
   const [message, setMessage] = useState(null);
+  
   const [language, setLanguage] = useState("English");
   const [translation, setTranslation] = useState("en");
   const [groupMessage, setGroupMessage] = useState(null);
@@ -37,6 +38,8 @@ function Chat() {
       sendMessage(e);
     }
   };
+
+
 
   const sendMessage = e => {
     e.preventDefault();
@@ -90,6 +93,7 @@ function Chat() {
           Send Message
         </button>
         <input
+
           type="text"
           className="chat-input"
           value={message}
@@ -98,6 +102,9 @@ function Chat() {
             setMessage(e.target.value);
           }}
         />
+         
+      
+
       </div>
       <p className="chat-output">{groupMessage}</p>
     </div>
