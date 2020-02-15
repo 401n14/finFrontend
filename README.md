@@ -1,9 +1,7 @@
 # Project "Transcribe"
-## Production Links
 
-* [Server](https://transcribe-jamm.herokuapp.com) 
-* [Client](https://www.npmjs.com/package/transcribe-chat)
-* [Documentation](https://transcribe-jamm.herokuapp.com/docs/)
+## [Production Link](https://transcribe-jamm.herokuapp.com) 
+
 
 ## BackEnd - Node Application
 TODO !!!!!!!!!!!!!  - Needs UPDATE !!!!!!!!!!!!!!!!!!!!!!!
@@ -19,7 +17,6 @@ TODO !!!!!!!!!!!!!  - Needs UPDATE !!!!!!!!!!!!!!!!!!!!!!!
 - [Express](https://expressjs.com/) 
 - [Socket.io](https://socket.io/)
 - [Google Translate API](https://www.npmjs.com/package/google-translate)
-- [MongoDB](https://www.mongodb.com/) 
 - [Auth0](https://auth0.com/)
 
 
