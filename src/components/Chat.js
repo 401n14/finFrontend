@@ -95,6 +95,9 @@ function Chat() {
           <option>Select Language</option>
           <option>English</option>
           <option>Espanol</option>
+          <option>አማርኛ</option>
+          <option>русский</option>
+          <option>日本語</option>
         </select>
       </div>
       <div className="chat-section">
