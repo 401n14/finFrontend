@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import useSockets from "../utils/useSockets";
 import { useAuth0 } from "../react-auth0-spa.js";
+import FormSelect from "../components/FormSelect";
+import data from '../components/data/data';
 
 const fetch = require('node-fetch');
 
@@ -10,7 +12,7 @@ function Chat() {
   const [message, setMessage] = useState(null);
   const [language, setLanguage] = useState("English");
   const [translation, setTranslation] = useState("en");
-  const [groupMessage, setGroupMessage] = useState(null);
+  const [groupMessage, setGroupMessage] = useState([]);
   const { socket, socketVal, isConnected } = useSockets(
     "https://jamesdunn-lab23.herokuapp.com/",
     "broadcast"
@@ -29,8 +31,13 @@ function Chat() {
       let res = await fetch('https://translation-server.herokuapp.com/translate?message=' + data.message + '&translation=' + data.translation);
       let json = await res.text();
       socketVal.message = await json;
-      setGroupMessage(`${socketVal.name}:  ${socketVal.message}`);
-  }, [socketVal.message, socketVal.name]);
+
+      let msg = [...groupMessage];
+      msg.push(<p>`${socketVal.name}:  ${socketVal.message}`</p>)
+      
+      setGroupMessage(msg);
+  
+  }, [socketVal.message, socketVal.name, groupMessage]);
 
   const handleEnter = e => {
     if (e.key === "Enter") {
@@ -73,18 +80,10 @@ function Chat() {
           ? "You are connected to the chat"
           : "You are not connected to the chat"}
       </h3>
-      <div>
-        <select onChange={e => {
-            setLanguage(e.target.value);
-        }}>
-          <option>Select Language</option>
-          <option>English</option>
-          <option>Espanol</option>
-          <option>አማርኛ</option>
-          <option>русский</option>
-          <option>日本語</option>
-        </select>
-      </div>
+
+      <FormSelect list={data.Languages}  onChange={e => {
+            setLanguage(e.target.value)}} />
+
       <div className="chat-section">
         <button className="chat-button" onClick={sendMessage}>
           Send Message
