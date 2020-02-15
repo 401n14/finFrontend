@@ -1,37 +1,26 @@
-# ***Project README Example***
----------------------------------
----------------------------------
+# Project "Transcribe"
+## Production Links
 
-# Project JOHN
----------------------------------
-## We are deployed on _____
+* [Server](https://transcribe-jamm.herokuapp.com) 
+* [Client](https://www.npmjs.com/package/transcribe-chat)
+* [Documentation](https://transcribe-jamm.herokuapp.com/docs/)
 
-[project url here]
+## BackEnd - Node Application
+TODO !!!!!!!!!!!!!  - Needs UPDATE !!!!!!!!!!!!!!!!!!!!!!!
+The backend part of our application is a NodeJS platform for realtime chat between two or more users. We utilized NodeJS, JavaScript, Google Translate API, and MongoDB. 
 
----------------------------------
-## Web Application
-***[Explain your app, should be at least a paragraph. What does it do? Why should I use? Sell your product!]***
+## FrontEnd - React Application
 
-The web application consists of a frontend written in Razor views, HTML, CSS,
-Bootstrap, Popper, and jQuery. The backend was written in C# using ASP.NET Core 2, Entity Framework Core, and the MVC framework.
+TODO !!!!!!!!!!!!!  - Needs UPDATE !!!!!!!!!!!!!!!!!!!!!!!
 
-An interface is provided to create new blog
-posts, view existing blog posts, edit existing blog posts, delete existing
-blog posts, and search by both keywords and usernames. All blog posts can be
-enriched using Azure Language Services (part of Microsoft's Cognitive Services
-suite), Bing Image API, and Parallel Dots (for automated tagging of posts via
-key phrases detected within the post's body). Image enrichments can be added
-based on the overall sentiment score (a range 0.0 - 1.0 related to the mood
-of the post) and key phrases / keywords detected in the posts. Optionally, users
-can choose to opt-out of these features for privacy or data collection concerns.
+## Main Dependencies
 
----------------------------------
-
-## Tools Used
-Microsoft Visual Studio
-
-- ReactJS
-- Express 
+- [NodeJS](https://nodejs.org/en/)
+- [Express](https://expressjs.com/) 
+- [Socket.io](https://socket.io/)
+- [Google Translate API](https://www.npmjs.com/package/google-translate)
+- [MongoDB](https://www.mongodb.com/) 
+- [Auth0](https://auth0.com/)
 
 
 ---------------------------------
@@ -40,12 +29,10 @@ Microsoft Visual Studio
 
 Clone this repository to your local machine.
 ```
-$ git clone https://github.com/YourRepo/YourProject.git
+$ git clone git@github.com:401n14/finFrontend.git
 ```
-Once downloaded, you can either use the dotnet CLI utilities or Visual Studio 2017 (or greater) to build the web application.
-```
-
 Use `yarn` or `npm` to install the project dependencies:
+```
 
 ```bash
 # Using npm..
@@ -59,17 +46,13 @@ npm install
 npm run start
 ```
 
-## Deployment`
+## Deployment
 
 ### Compiles and minifies for production
 
 ```bash
 npm run build
 ```
-
-### Docker build
-
-To build and run the Docker image, run `exec.sh`, or `exec.ps1` on Windows.
 
 ### Run your tests
 
@@ -94,26 +77,16 @@ npm run test
 ### Viewing Post Details
 ![Details of Post](https://via.placeholder.com/500x250)
 
----------------------------
-## Data Flow (Frontend, Backend, REST API)
-***[Add a clean and clear explanation of what the data flow is. Walk me through it.]***
-![Data Flow Diagram](/assets/img/Flowchart.png)
-
----------------------------
-## Data Model
-
-### Overall Project Schema
-***[Add a description of your DB schema. Explain the relationships to me.]***
-![Database Schema](/assets/img/ERD.png)
-
----------------------------
-
+---------------------------------
 
 ## Authors
-Albus Dumbbledore
-Igor Karkaroff
-Minerva McGonagall
-Leta Lestrange
-Gellert Grindelwald
+* Nadya Ilinskaya
+* James Dunn
+* Anna Li
+* Morgan T Shaw
+* Martin Balke
+* Meron Sibani
 
-------------------------------
+aka **nightJAMMM team**
+
+<center>© CodeFellows | 2020</center>
