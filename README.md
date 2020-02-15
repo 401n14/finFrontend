@@ -30,7 +30,7 @@ can choose to opt-out of these features for privacy or data collection concerns.
 ## Tools Used
 Microsoft Visual Studio
 
-- NodeJS
+- ReactJS
 - Express 
 
 
@@ -44,17 +44,37 @@ $ git clone https://github.com/YourRepo/YourProject.git
 ```
 Once downloaded, you can either use the dotnet CLI utilities or Visual Studio 2017 (or greater) to build the web application.
 ```
-cd YourRepo/YourProject
-`npm i`
+
+Use `yarn` or `npm` to install the project dependencies:
+
+```bash
+# Using npm..
+npm install
+
 ```
-Install all dependencies needed for the project.
+
+### Compiles and hot-reloads for development
+
+```bash
+npm run start
 ```
-Database
+
+## Deployment`
+
+### Compiles and minifies for production
+
+```bash
+npm run build
 ```
-* explain how to use the database *
-```
-cd YourRepo/YourProject
-npm start
+
+### Docker build
+
+To build and run the Docker image, run `exec.sh`, or `exec.ps1` on Windows.
+
+### Run your tests
+
+```bash
+npm run test
 ```
 
 ---------------------------------
