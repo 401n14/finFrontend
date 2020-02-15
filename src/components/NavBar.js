@@ -48,7 +48,7 @@ const NavBar = () => {
                   Home
                 </NavLink>
               </NavItem>
-              <NavItem>
+              {isAuthenticated &&( <NavItem>
                 <NavLink
                   tag={RouterNavLink}
                   to="/chat"
@@ -57,7 +57,7 @@ const NavBar = () => {
                 >
                   Chat
                 </NavLink>
-              </NavItem>
+              </NavItem>)}
             </Nav>
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (
