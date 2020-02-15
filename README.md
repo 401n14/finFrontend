@@ -1,6 +1,6 @@
 # Project "Transcribe"
 
-## [Production Link](https://transcribe-jamm.herokuapp.com) 
+## [Production Link](https://transcribe-chat.com) 
 
 
 ## BackEnd - Node Application
@@ -14,6 +14,7 @@ TODO !!!!!!!!!!!!!  - Needs UPDATE !!!!!!!!!!!!!!!!!!!!!!!
 ## Main Dependencies
 
 - [NodeJS](https://nodejs.org/en/)
+- [ReactJS](https://reactjs.org/)
 - [Express](https://expressjs.com/) 
 - [Socket.io](https://socket.io/)
 - [Google Translate API](https://www.npmjs.com/package/google-translate)
