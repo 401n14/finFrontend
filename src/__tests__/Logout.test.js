@@ -1,5 +1,5 @@
 import React from 'react';
-import Logout from '../components/Logout';
+// import Logout from '../components/Logout';
 import {configure, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
