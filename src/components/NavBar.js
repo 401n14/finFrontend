@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { NavLink as RouterNavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from 'react';
+import { NavLink as RouterNavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
   Collapse,
@@ -15,10 +15,10 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
-} from "reactstrap";
+  DropdownItem,
+} from 'reactstrap';
 
-import { useAuth0 } from "../react-auth0-spa";
+import { useAuth0 } from '../react-auth0-spa';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,7 @@ const NavBar = () => {
 
   const logoutWithRedirect = () =>
     logout({
-      returnTo: window.location.origin
+      returnTo: window.location.origin,
     });
 
   return (

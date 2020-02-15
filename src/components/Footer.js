@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 const Footer = () => (
   <footer className="bg-light p-3 text-center">
     <div className="logo" />
     <p>
-      We're awesome team of developers! 
+      We&#39;re awesome team of developers! 
     </p>
   </footer>
 );

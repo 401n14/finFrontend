@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import hljs from "highlight.js/lib/highlight";
-import "highlight.js/styles/monokai-sublime.css";
+import hljs from 'highlight.js/lib/highlight';
+import 'highlight.js/styles/monokai-sublime.css';
 
 const registeredLanguages = {};
 
@@ -37,11 +37,11 @@ class Highlight extends Component {
     this.highlight();
   }
 
-  highlight = () => {
+  highlight() {
     this.codeNode &&
       this.codeNode.current &&
       hljs.highlightBlock(this.codeNode.current);
-  };
+  }
 
   render() {
     const { language, children } = this.props;
@@ -63,11 +63,11 @@ class Highlight extends Component {
 
 Highlight.propTypes = {
   children: PropTypes.node.isRequired,
-  language: PropTypes.string
+  language: PropTypes.string,
 };
 
 Highlight.defaultProps = {
-  language: "json"
+  language: 'json',
 };
 
 export default Highlight;
