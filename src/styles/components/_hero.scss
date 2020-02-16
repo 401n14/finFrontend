@@ -1,0 +1,32 @@
+.hero-container{
+  width: 100vw;
+  height: 95vh;
+  display: flex;
+  .hero-image{
+    min-width: 60rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    height: 95vh;
+    background-image: linear-gradient(90deg, rgba($color-primary,.9) 35%, rgba($color-primary-dark,.9) 100%), url(https://images.unsplash.com/photo-1512686096451-a15c19314d59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
+    p{
+      padding-left: 5rem;
+      padding-right: 1rem;
+      max-width: 40rem;
+    }
+    .hero-buttons{
+      margin-top: 1rem;
+    }
+    .width{
+      max-width: 40rem;
+    }
+
+  }
+}

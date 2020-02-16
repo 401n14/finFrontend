@@ -1,23 +1,42 @@
 import React from "react";
 
-import logo from "../assets/logo.svg";
 
-const Hero = () => (
-  <div className="text-center hero my-5">
-    <img className="mb-3 app-logo" src={logo} alt="React logo" width="120" />
-    <h1 className="mb-4">Transcribe is AWESOME!</h1>
+function Hero(props) {
+  console.log(props.children);
 
-    <p className="lead">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id
-      ultricies enim. Donec sodales elit id eros lobortis tincidunt. Suspendisse
-      potenti. Nam diam nibh, sodales sed urna in, semper volutpat augue.
-      Suspendisse volutpat lorem nisi, vitae lacinia nulla aliquet eu. Duis non
-      purus convallis, rhoncus urna sed, aliquet tortor. Fusce vel sapien sed
-      metus venenatis pretium ut in neque. Donec condimentum metus sit amet nunc
-      lobortis efficitur. 
-      erat.
-    </p>
-  </div>
-);
+  return (
+    <div className="hero-container">
+
+      <div className="contain">
+        <div className="col-2">
+          {props.children[0]}
+        </div>
+        <div className="col-2 hero-image">
+          <h1 className="primary bold width">
+            Transcribe is
+                <br />
+            <span className="primary light">
+              your solution to modern communication
+                </span>
+          </h1>
+          <p className="secondary ">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum."{" "}
+          </p>
+          <div className="hero-buttons">
+            {props.children[1]}
+            {props.children[2]}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+}
 
 export default Hero;
