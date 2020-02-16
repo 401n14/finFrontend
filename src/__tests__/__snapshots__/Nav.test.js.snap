@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav Tests renders correctly 1`] = `
+<div
+  className="nav-container"
+>
+  <nav
+    className="navbar navbar-expand-md navbar-light bg-light"
+  >
+    <div
+      className="container"
+    >
+      <a
+        className="logo navbar-brand"
+      />
+      <button
+        aria-label="Toggle navigation"
+        className="navbar-toggler"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        className="collapse navbar-collapse"
+        style={Object {}}
+      >
+        <ul
+          className="mr-auto navbar-nav"
+        >
+          <li
+            className="nav-item"
+          >
+            <a
+              aria-current="page"
+              className="nav-link router-link-exact-active"
+              href="/"
+              onClick={[Function]}
+              style={Object {}}
+            >
+              Home
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              aria-current={null}
+              className="nav-link"
+              href="/chat"
+              onClick={[Function]}
+            >
+              Chat
+            </a>
+          </li>
+        </ul>
+        <ul
+          className="d-none d-md-block navbar-nav"
+        >
+          <li
+            className="dropdown nav-item"
+            onKeyDown={[Function]}
+          >
+            <a
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle nav-link"
+              href="#"
+              id="profileDropDown"
+              onClick={[Function]}
+            >
+              <img
+                alt="Profile"
+                className="nav-user-profile rounded-circle"
+                width="50"
+              />
+            </a>
+            <div
+              aria-hidden={true}
+              className="dropdown-menu"
+              role="menu"
+              tabIndex="-1"
+            >
+              <h6
+                className="dropdown-header"
+                onClick={[Function]}
+                tabIndex="-1"
+              />
+              <a
+                aria-current={null}
+                className="dropdown-profile dropdown-item"
+                href="/profile"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="0"
+              >
+                 Profile
+              </a>
+              <button
+                className="dropdown-item"
+                id="qsLogoutBtn"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="0"
+                type="button"
+              >
+                 Log out
+              </button>
+            </div>
+          </li>
+        </ul>
+        <ul
+          className="d-md-none justify-content-between navbar-nav"
+          style={
+            Object {
+              "minHeight": 170,
+            }
+          }
+        >
+          <li
+            className="nav-item"
+          >
+            <span
+              className="user-info"
+            >
+              <img
+                alt="Profile"
+                className="nav-user-profile d-inline-block rounded-circle mr-3"
+                width="50"
+              />
+              <h6
+                className="d-inline-block"
+              />
+            </span>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              aria-current={null}
+              href="/profile"
+              onClick={[Function]}
+            >
+              Profile
+            </a>
+          </li>
+          <li
+            className="nav-item"
+          >
+            <a
+              aria-current="page"
+              className="active"
+              href="/"
+              id="qsLogoutBtn"
+              onClick={[Function]}
+              style={Object {}}
+            >
+              Log out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+`;
