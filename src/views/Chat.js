@@ -77,8 +77,7 @@ function Chat() {
   }, [getLanguage]);
 
   useEffect(() => {
-    console.log('HHHHHHERE');
-    if (socketVal.name && socketVal.message) {
+   if (socketVal.name && socketVal.message) {
       (async () => {
         await translateMessage({ message: socketVal.message, translation });
       })();
