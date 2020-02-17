@@ -3,9 +3,9 @@ import React from 'react';
 function FormSelect(props) {
     let options = [];
 
-    options = props.list.map(item => {
+    options = props.list.map((item, ind)=> {
       return (
-        <option value={item.name} key={item.name}>
+        <option key={ind} value={item.name}>
           {item.name}
         </option>
       );
