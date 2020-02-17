@@ -19,14 +19,14 @@ function Chat() {
 
   const getLanguage = useCallback (
       async () => {
-      let res = await fetch('https://translation-server.herokuapp.com/detect?language=' + language);
+      let res = await fetch('https://transcribe-chat-server.firebaseapp.com/detect?language=' + language);
       let json = await res.text();
       setTranslation(json);
   }, [language]);
 
   const translateMessage = useCallback(
       async data => {
-      let res = await fetch('https://translation-server.herokuapp.com/translate?message=' + data.message + '&translation=' + data.translation);
+      let res = await fetch('https://transcribe-chat-server.firebaseapp.com/translate?message=' + data.message + '&translation=' + data.translation);
       let json = await res.text();
       socketVal.message = await json;
       setGroupMessage(`${socketVal.name}:  ${socketVal.message}`);
