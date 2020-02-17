@@ -33,7 +33,7 @@ describe('Snapshot Test', () => {
         expect(page).toMatchSnapshot();
     });
 });
-describe('Snapshot Test', () => {
+describe('Test if no user', () => {
     beforeEach(() => {
         // Mock the Auth0 hook and make it return a logged in state
         useAuth0.mockReturnValue({
@@ -45,7 +45,6 @@ describe('Snapshot Test', () => {
     });
     it('renders without a user & calls the Loading component', () => {
         let wrapper = shallow(<Profile />)
-        console.log(wrapper.text());
         expect(wrapper.text()).toEqual('<Loading />');
 
     });

@@ -26,9 +26,7 @@ const user = {
     });
 });
 
-afterAll(cleanup)
-
-describe('Chat Tests', () => {
+xdescribe('Chat Tests', () => {
   
     beforeEach(() => {
       // Mock the Auth0 hook and make it return a logged in state
