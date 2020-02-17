@@ -1,8 +1,8 @@
 {
     "Languages": [
       { "name": "English" },
-      { "name": "Espanol"},
-      { "name": "日本語"},
-      {"name": "한국어"}
+      { "name": "Espanol" },
+      { "name": "日本語" },
+      { "name": "한국어" }
     ]
   }
