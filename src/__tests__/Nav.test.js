@@ -27,7 +27,7 @@ describe('Nav Tests', () => {
             loginWithRedirect: jest.fn(),
         });
     });
-    it('Renders with required props', () => {
+    it('Renders with required props', async () => {
         const wrapper = shallow(
           <BrowserRouter>
       <Nav>
@@ -44,7 +44,7 @@ describe('Nav Tests', () => {
                 </BrowserRouter>).toJSON();
         expect(page).toMatchSnapshot();
     });
-    it('Logout Button', () => {
+    it('Logout Button', async () => {
         const wrapper = mount(
             <BrowserRouter>
         <Nav>

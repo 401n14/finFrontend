@@ -25,7 +25,7 @@ describe('Chat Tests', () => {
         user
       });
     });
-    it('Renders with required props', () => {
+    it('Renders with required props', async () => {
       const wrapper = mount(<Chat />);
       expect(wrapper).toBeTruthy();
     });
@@ -33,15 +33,14 @@ describe('Chat Tests', () => {
         const page = renderer.create(<Chat />).toJSON();
         expect(page).toMatchSnapshot();
     });
-    //Not testing until I can solve Travis error
-    xit('changes state message on change', () => {
+    it('changes state message on change', async () => {
       const wrapper = mount(<Chat />);
       let message = wrapper.find('input.chat-input');
-    //   message.simulate('change', {target: {value: 'hello'}});
+      message.simulate('change', {target: {value: 'hello'}});
 
       expect(message.instance().value).toEqual('hello');
     });
-    it('renders language selector', () => {
+    it('renders language selector', async () => {
       const wrapper = mount(<Chat
       />)
       let language = wrapper.find('select').first();
