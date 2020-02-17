@@ -16,7 +16,16 @@ const user = {
   };
 
   jest.mock('../react-auth0-spa.js');
+  
+  const originalError = console.error;
 
+  beforeAll(() => {
+    console.error = jest.fn();
+  });
+  
+  afterAll(() => {
+    console.error = originalError;
+  });
 describe('Chat Tests', () => {
     beforeEach(() => {
       // Mock the Auth0 hook and make it return a logged in state

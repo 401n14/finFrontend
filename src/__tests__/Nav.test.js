@@ -17,6 +17,7 @@ const user = {
 
   jest.mock('../react-auth0-spa.js');
 
+
 describe('Nav Tests', () => {
     beforeEach(() => {
         // Mock the Auth0 hook and make it return a logged in state
