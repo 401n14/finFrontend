@@ -9,7 +9,7 @@ const fetch = require('node-fetch');
 function Chat() {
   const [name, setName] = useState(null);
   const [welcome, setWelcome] = useState("Welcome!");
-  const [message, setMessage] = useState(null);
+  const [message, setMessage] = useState("");
   const [language, setLanguage] = useState("English");
   const [translation, setTranslation] = useState("en");
   //----------------New= []      Old=null -------------- Updated to old to fix Error
