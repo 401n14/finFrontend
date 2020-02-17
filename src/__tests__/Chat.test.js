@@ -6,6 +6,7 @@ import { useAuth0 } from '../react-auth0-spa.js';
 import FormSelect from "../components/FormSelect";
 import Data from '../components/data/data';
 import renderer from 'react-test-renderer';
+import { act } from 'react-dom/test-utils';
 
 configure({adapter:new Adapter()});
 
@@ -16,16 +17,7 @@ const user = {
   };
 
   jest.mock('../react-auth0-spa.js');
-  
-  const originalError = console.error;
 
-  beforeAll(() => {
-    console.error = jest.fn();
-  });
-  
-  afterAll(() => {
-    console.error = originalError;
-  });
 describe('Chat Tests', () => {
     beforeEach(() => {
       // Mock the Auth0 hook and make it return a logged in state
@@ -38,7 +30,7 @@ describe('Chat Tests', () => {
       const wrapper = mount(<Chat />);
       expect(wrapper).toBeTruthy();
     });
-    it('renders correctly', () => {
+    it('renders correctly', async () => {
         const page = renderer.create(<Chat />).toJSON();
         expect(page).toMatchSnapshot();
     });
