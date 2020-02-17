@@ -12,7 +12,8 @@ function Chat() {
   const [message, setMessage] = useState(null);
   const [language, setLanguage] = useState("English");
   const [translation, setTranslation] = useState("en");
-  const [groupMessage, setGroupMessage] = useState([]);
+  //----------------New= []      Old=null -------------- Updated to old to fix Error
+  const [groupMessage, setGroupMessage] = useState(null);
   const { socket, socketVal, isConnected } = useSockets(
     "https://jamesdunn-lab23.herokuapp.com/",
     "broadcast"
@@ -31,14 +32,18 @@ function Chat() {
       let res = await fetch('https://translation-server.herokuapp.com/translate?message=' + data.message + '&translation=' + data.translation);
       let json = await res.text();
       socketVal.message = await json;
-
-      let msg = [...groupMessage];
-      msg.push(<p>`${socketVal.name}:  ${socketVal.message}`</p>)
+      //------------------New Code Caused Constant message firing--------------------
+  //     let msg = [...groupMessage];
+  //     msg.push(<p>`${socketVal.name}:  ${socketVal.message}`</p>)
       
-      setGroupMessage(msg);
+  //     setGroupMessage(msg);
   
-  }, [socketVal.message, socketVal.name, groupMessage]);
+  // }, [socketVal.message, socketVal.name, groupMessage]);
 
+  //--------------------- Old code I reverted to----------
+  setGroupMessage(`${socketVal.name}:  ${socketVal.message}`);	
+}, [socketVal.message, socketVal.name]);
+//-----------------------End Old code
   const handleEnter = e => {
     if (e.key === "Enter") {
       sendMessage(e);

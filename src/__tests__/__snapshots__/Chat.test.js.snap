@@ -53,7 +53,7 @@ exports[`Chat Tests renders correctly 1`] = `
       onChange={[Function]}
       onKeyUp={[Function]}
       type="text"
-      value=""
+      value={null}
     />
   </div>
   <p

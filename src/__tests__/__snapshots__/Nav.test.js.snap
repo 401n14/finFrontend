@@ -95,9 +95,7 @@ exports[`Nav Tests renders correctly 1`] = `
                 onClick={[Function]}
                 role="menuitem"
                 tabIndex="0"
-              >
-                 Profile
-              </a>
+              />
               <button
                 className="dropdown-item"
                 id="qsLogoutBtn"
@@ -106,7 +104,7 @@ exports[`Nav Tests renders correctly 1`] = `
                 tabIndex="0"
                 type="button"
               >
-                 Log out
+                out
               </button>
             </div>
           </li>
