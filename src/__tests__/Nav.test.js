@@ -1,11 +1,10 @@
 import React from 'react';
 import Nav from '../components/NavBar';
-import {configure, mount} from 'enzyme';
+import {configure, mount, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { useAuth0 } from '../react-auth0-spa.js';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 configure({adapter:new Adapter()});
@@ -20,18 +19,19 @@ const user = {
 
 describe('Nav Tests', () => {
     beforeEach(() => {
-      // Mock the Auth0 hook and make it return a logged in state
-      useAuth0.mockReturnValue({
-        isAuthenticated: true,
-        user,
-        logout: jest.fn(),
-        loginWithRedirect: jest.fn(),
-      });
+        // Mock the Auth0 hook and make it return a logged in state
+        useAuth0.mockReturnValue({
+            isAuthenticated: true,
+            user,
+            logout: jest.fn(),
+            loginWithRedirect: jest.fn(),
+        });
     });
     it('Renders with required props', () => {
-      const wrapper = mount(
+        const wrapper = shallow(
           <BrowserRouter>
-      <Nav />
+      <Nav>
+      </Nav>
           </BrowserRouter>
       );
       
@@ -39,14 +39,16 @@ describe('Nav Tests', () => {
     });
     it('renders correctly', () => {
         const page = renderer.create(          <BrowserRouter>
-            <Nav />
+            <Nav>
+      </Nav>
                 </BrowserRouter>).toJSON();
         expect(page).toMatchSnapshot();
     });
-    it('Logout Button', async () => {
+    it('Logout Button', () => {
         const wrapper = mount(
             <BrowserRouter>
-        <Nav />
+        <Nav>
+      </Nav>
             </BrowserRouter>
         );
         let logout = wrapper.find('#qsLogoutBtn').at(5).text();
