@@ -25,6 +25,7 @@ function Chat() {
     );
     let json = await res.text();
     setTranslation(json);
+   
   }, [language]);
 
   const translateMessage = useCallback(
@@ -40,6 +41,7 @@ function Chat() {
       socketVal.message = await json;
 
       let msg = [...groupMessage];
+
       msg.push(
         <p>
           {socketVal.name}: {socketVal.message}
@@ -72,15 +74,16 @@ function Chat() {
 
   useEffect(() => {
     getLanguage();
-  }, [getLanguage, language]);
+  }, [getLanguage]);
 
   useEffect(() => {
+    console.log('HHHHHHERE');
     if (socketVal.name && socketVal.message) {
       (async () => {
         await translateMessage({ message: socketVal.message, translation });
       })();
     }
-  }, [socketVal, translateMessage, translation]);
+  }, [socketVal]);
 
   return (
     <div className='Chat'>
