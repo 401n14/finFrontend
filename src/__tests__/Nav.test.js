@@ -17,6 +17,7 @@ const user = {
 
   jest.mock('../react-auth0-spa.js');
 
+  
 
 describe('Nav Tests', () => {
     beforeEach(() => {
@@ -28,6 +29,8 @@ describe('Nav Tests', () => {
             loginWithRedirect: jest.fn(),
         });
     });
+    afterAll(() => setTimeout(() => process.exit(), 1000))
+    
     it('Renders with required props', async () => {
         const wrapper = shallow(
           <BrowserRouter>
