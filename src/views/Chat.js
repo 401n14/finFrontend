@@ -12,7 +12,7 @@ function Chat() {
   const [message, setMessage] = useState(null);
   const [language, setLanguage] = useState("English");
   const [translation, setTranslation] = useState("en");
-  const [groupMessage, setGroupMessage] = useState([]);
+  const [groupMessage, setGroupMessage] = useState(null);
   const { socket, socketVal, isConnected } = useSockets(
     "https://jamesdunn-lab23.herokuapp.com/",
     "broadcast"
@@ -30,14 +30,11 @@ function Chat() {
       async data => {
       let res = await fetch('https://transcribe-chat-server.firebaseapp.com/translate?message=' + data.message + '&translation=' + data.translation);
       let json = await res.text();
-      socketVal.message = await json;
 
-      let msg = [...groupMessage];
-      msg.push(<p>`${socketVal.name}:  ${socketVal.message}`</p>)
-      
-      setGroupMessage(msg);
+      socketVal.message = await json;
+      setGroupMessage(`${socketVal.name}:  ${socketVal.message}`);
+  }, [socketVal.message, socketVal.name]);
   
-  }, [socketVal.message, socketVal.name, groupMessage]);
 
   const handleEnter = e => {
     if (e.key === "Enter") {
