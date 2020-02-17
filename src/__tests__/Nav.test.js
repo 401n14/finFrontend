@@ -5,6 +5,8 @@ import Adapter from 'enzyme-adapter-react-16';
 import { useAuth0 } from '../react-auth0-spa.js';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 configure({adapter:new Adapter()});
 
@@ -26,7 +28,7 @@ describe('Nav Tests', () => {
         loginWithRedirect: jest.fn(),
       });
     });
-    it('Renders with required props', async () => {
+    it('Renders with required props', () => {
       const wrapper = mount(
           <BrowserRouter>
       <Nav />

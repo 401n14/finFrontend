@@ -25,7 +25,7 @@ describe('Chat Tests', () => {
         user
       });
     });
-    it('Renders with required props', async () => {
+    it('Renders with required props', () => {
       const wrapper = mount(<Chat />);
       expect(wrapper).toBeTruthy();
     });
@@ -33,14 +33,14 @@ describe('Chat Tests', () => {
         const page = renderer.create(<Chat />).toJSON();
         expect(page).toMatchSnapshot();
     });
-    it('changes state message on change', async () => {
+    it('changes state message on change', () => {
       const wrapper = mount(<Chat />);
       let message = wrapper.find('input.chat-input');
       message.simulate('change', {target: {value: 'hello'}});
 
       expect(message.instance().value).toEqual('hello');
     });
-    it('renders language selector', async () => {
+    it('renders language selector', () => {
       const wrapper = mount(<Chat
       />)
       let language = wrapper.find('select').first();
