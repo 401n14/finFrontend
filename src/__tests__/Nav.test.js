@@ -6,7 +6,6 @@ import { useAuth0 } from '../react-auth0-spa.js';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from "react-router-dom";
 
-
 configure({adapter:new Adapter()});
 
 const user = {
