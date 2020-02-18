@@ -2,12 +2,21 @@ import React, { useState, useEffect, useCallback } from "react";
 import useSockets from "../utils/useSockets";
 import { useAuth0 } from "../react-auth0-spa.js";
 
+
+
 const fetch = require('node-fetch');
+
+
+
+  
+
+
 
 function Chat() {
   const [name, setName] = useState(null);
   const [welcome, setWelcome] = useState("Welcome!");
   const [message, setMessage] = useState(null);
+  
   
   const [language, setLanguage] = useState("English");
   const [translation, setTranslation] = useState("en");
@@ -102,13 +111,24 @@ function Chat() {
             setMessage(e.target.value);
           }}
         />
-         
-      
-
       </div>
       <p className="chat-output">{groupMessage}</p>
+     
+
+      
+
+
+      
     </div>
   );
 }
 
 export default Chat;
+
+
+      
+
+
+         
+      
+
