@@ -41,13 +41,13 @@ describe('Nav Tests', () => {
       
       expect(wrapper).toBeTruthy();
     });
-    // it('renders correctly, Snapshot', () => {
-    //     const page = renderer.create(          <BrowserRouter>
-    //         <Nav>
-    //   </Nav>
-    //             </BrowserRouter>).toJSON();
-    //     expect(page).toMatchSnapshot();
-    // });
+    it('renders correctly, Snapshot', () => {
+        const page = renderer.create(          <BrowserRouter>
+            <Nav>
+      </Nav>
+                </BrowserRouter>).toJSON();
+        expect(page).toMatchSnapshot();
+    });
     it('Logout Button', async () => {
         const wrapper = mount(
             <BrowserRouter>

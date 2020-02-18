@@ -21,8 +21,16 @@ const user = {
   jest.mock('../react-auth0-spa.js');
 
   describe('Default Test', () => {
-    it('', () => {
-        expect(true).toBeTruthy();
+    beforeEach(() => {
+      // Mock the Auth0 hook and make it return a logged in state
+      useAuth0.mockReturnValue({
+        isAuthenticated: true,
+        user
+      });
+    });
+    it('renders correctly', () => {
+        const page = renderer.create(<Chat />).toJSON();
+        expect(page).toMatchSnapshot();
     });
 });
 
@@ -43,10 +51,7 @@ xdescribe('Chat Tests', () => {
         })
       expect(wrapper).toBeTruthy();
     });
-    // it('renders correctly', () => {
-    //     const page = renderer.create(<Chat />).toJSON();
-    //     expect(page).toMatchSnapshot();
-    // });
+
     it('changes state message on change', () => {
     //   const wrapper = mount(<Chat />);
     let wrapper;
