@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Test renders correctly, Snapshot 1`] = `
+<div
+  className="mb-5 container"
+>
+  <div
+    className="align-items-center profile-header mb-5 text-center text-md-left row"
+  >
+    <div
+      className="col-md-2"
+    >
+      <img
+        alt="Profile"
+        className="rounded-circle img-fluid profile-picture mb-3 mb-md-0"
+      />
+    </div>
+    <div
+      className="col-md"
+    >
+      <h2 />
+      <p
+        className="lead text-muted"
+      >
+        johndoe@me.com
+      </p>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <pre
+      className="rounded"
+    >
+      <code
+        className="json"
+      >
+        {
+  "email": "johndoe@me.com",
+  "email_verified": true,
+  "sub": "google-oauth2|2147627834623744883746"
+}
+      </code>
+    </pre>
+  </div>
+</div>
+`;

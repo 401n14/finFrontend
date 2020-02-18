@@ -5,15 +5,21 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom --verbose --coverage",
     "eject": "react-scripts eject"
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.0.2",
+<<<<<<< HEAD
     "@babel/core": "^7.8.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
+=======
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+>>>>>>> 35e547adc22cb1f211d72734e35c15c104924a34
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "express": "^4.16.4",
@@ -24,10 +30,13 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
+    "react-test-renderer": "^16.12.0",
     "reactstrap": "^8.0.0",
     "socket.io-client": "^2.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@testing-library/react": "^9.4.0"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
