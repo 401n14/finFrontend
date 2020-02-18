@@ -15,7 +15,7 @@ function Chat() {
   const [groupMessage, setGroupMessage] = useState([]);
   const [userGroup, setUserGroup] = useState({});
   const { socket, socketVal, isConnected } = useSockets(
-    'http://localhost:3000/',
+    'https://final-tcp-server.herokuapp.com/',
     'broadcast'
   );
   const { user } = useAuth0();
