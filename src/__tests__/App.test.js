@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 configure({adapter:new Adapter()});
 
-describe('Default Test', () => {
+xdescribe('Default Test', () => {
     it('', () => {
         expect(true).toBeTruthy();
     });
