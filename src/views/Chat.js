@@ -51,7 +51,7 @@ function Chat() {
 
       setGroupMessage(msg);
     },
-    [groupMessage, socketVal.message, socketVal.name]
+    [socketVal.message, socketVal.name]
   );
 
   const handleEnter = e => {
@@ -93,7 +93,7 @@ function Chat() {
       setWelcome(`${socketVal.user} has joined the chat!`);
     }
 
-  }, [socketVal.user])
+  }, [socketVal.user]);
 
   useEffect(() => {
     getLanguage();
