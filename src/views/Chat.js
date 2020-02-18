@@ -13,8 +13,9 @@ function Chat() {
   const [language, setLanguage] = useState('English');
   const [translation, setTranslation] = useState('en');
   const [groupMessage, setGroupMessage] = useState([]);
+  const [userGroup, setUserGroup] = useState({});
   const { socket, socketVal, isConnected } = useSockets(
-    'https://jamesdunn-lab23.herokuapp.com/',
+    'https://final-tcp-server.herokuapp.com/',
     'broadcast'
   );
   const { user } = useAuth0();
@@ -68,9 +69,31 @@ function Chat() {
   };
 
   useEffect(() => {
+    if (socketVal.exitMessage) {
+      setWelcome(socketVal.exitMessage);
+    }
+  }, [socketVal, socketVal.exitMessage]);
+
+  useEffect(() => {
+    if (socketVal.userGroup) {
+      setUserGroup(socketVal.userGroup);
+      console.log('USER GROUP: ', userGroup);
+    }
+  }, [socketVal.userGroup, userGroup]);
+
+  useEffect(() => {
     setName(user.nickname);
-    setWelcome(`Hi ${name}! Welcome to the Chat!`);
-  }, [name, user.nickname]);
+    if (name) {
+      socket.emit("username", {name});
+    }
+  }, [name, socket, user.nickname]);
+
+  useEffect(() => {
+    if (socketVal.user) {
+      setWelcome(`${socketVal.user} has joined the chat!`);
+    }
+
+  }, [socketVal.user]);
 
   useEffect(() => {
     getLanguage();
