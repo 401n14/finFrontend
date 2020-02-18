@@ -10,8 +10,11 @@ const useSockets = (url, event) => {
     const client = socketio.connect(url);
 
     setSocket(client);
-    client.on("connect", () => setConnected(true));
-    client.on("disconnect", () => setConnected(false));
+    client.on("connect", () => {setConnected(true)});
+    client.on("disconnect", data => {
+      setConnected(false);
+      setSocketVal(data);
+    });
     client.on(event, data => {
       setSocketVal(data);
     });

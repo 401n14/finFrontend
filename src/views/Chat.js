@@ -13,22 +13,23 @@ function Chat() {
   const [language, setLanguage] = useState("English");
   const [translation, setTranslation] = useState("en");
   const [groupMessage, setGroupMessage] = useState(null);
+  const [userGroup, setUserGroup] = useState({});
   const { socket, socketVal, isConnected } = useSockets(
-    "https://jamesdunn-lab23.herokuapp.com/",
+    "http://localhost:3000",
     "broadcast"
   );
   const { user } = useAuth0();
 
   const getLanguage = useCallback (
       async () => {
-      let res = await fetch('https://transcribe-chat-server.firebaseapp.com/detect?language=' + language);
+      let res = await fetch('https://translation-server.herokuapp.com/detect?language=' + language);
       let json = await res.text();
       setTranslation(json);
   }, [language]);
 
   const translateMessage = useCallback(
       async data => {
-      let res = await fetch('https://transcribe-chat-server.firebaseapp.com/translate?message=' + data.message + '&translation=' + data.translation);
+      let res = await fetch('https://translation-server.herokuapp.com/translate?message=' + data.message + '&translation=' + data.translation);
       let json = await res.text();
 
       socketVal.message = await json;
@@ -51,10 +52,31 @@ function Chat() {
   };
 
   useEffect(() => {
+    if (socketVal.exitMessage) {
+      setWelcome(socketVal.exitMessage);
+    }
+  }, [socketVal, socketVal.exitMessage]);
+
+  useEffect(() => {
+    if (socketVal.userGroup) {
+      setUserGroup(socketVal.userGroup);
+      console.log('USER GROUP: ', userGroup);
+    }
+  }, [socketVal.userGroup, userGroup]);
+
+  useEffect(() => {
     setName(user.nickname);
-    setWelcome(`Hi ${name}! Welcome to the Chat!`)
-    
-  }, [name, user.nickname]);
+    if (name) {
+      socket.emit("username", {name});
+    }
+  }, [name, socket, user.nickname]);
+
+  useEffect(() => {
+    if (socketVal.user) {
+      setWelcome(`${socketVal.user} has joined the chat!`);
+    }
+
+  }, [socketVal.user])
 
   useEffect(() => {
     getLanguage();
