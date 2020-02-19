@@ -46,7 +46,7 @@ function Chat() {
       socketVal.message = await json;
       let timeStamp = new Date();
       let msg = [...groupMessage];
-      msg.push(`${timeStamp.toUTCString()} ${socketVal.name.toUpperCase()}: ${socketVal.message}`);
+      msg.push(`${timeStamp.toLocaleString()} ${socketVal.name.toUpperCase()}: ${socketVal.message}`);
 
       setGroupMessage(msg);
     },
