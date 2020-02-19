@@ -38,11 +38,11 @@ afterEach(() => {
 });
 
 describe('Chat', () => {
-  it('Renders button to send message', () => {
+  it('Renders button to send message', async () => {
     let originalError = console.error;
     console.error = jest.fn();
 
-    act(() => {
+    await act( async () => {
       ReactDOM.render(<Chat />, container);
     });
     const button = container.querySelector('button');
@@ -51,11 +51,11 @@ describe('Chat', () => {
     console.error = originalError;
   });
 
-  it('Provides welcome message', () => {
+  it('Provides welcome message', async () => {
     let originalError = console.error;
     console.error = jest.fn();
 
-    act(() => {
+    await act( async () => {
         ReactDOM.render(<Chat />, container);
       });
 
