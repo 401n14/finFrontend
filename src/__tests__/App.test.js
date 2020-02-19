@@ -1,26 +1,40 @@
 import React from 'react';
 import App from '../App';
-import {configure, mount} from 'enzyme';
+import {configure, mount, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import renderer from 'react-test-renderer';
+import { BrowserRouter } from "react-router-dom";
+import { useAuth0 } from '../react-auth0-spa.js';
 
 configure({adapter:new Adapter()});
 
-xdescribe('Default Test', () => {
-    it('', () => {
-        expect(true).toBeTruthy();
+jest.mock('../react-auth0-spa.js');
+
+describe('Snapshot Test', () => {
+    beforeEach(() => {
+        // Mock the Auth0 hook and make it return a logged in state
+        useAuth0.mockReturnValue({
+            loading: false
+        });
+    });
+    it('renders correctly logged in, Snapshot', () => {
+        const page = renderer.create(
+        <BrowserRouter>
+        <App />
+        </BrowserRouter>
+        ).toJSON();
+        expect(page).toMatchSnapshot();
     });
 });
-xdescribe('App Renders Correctly', () => {
-    it('Nav bar exists', () => {
-        expect(true).toBeTruthy();
+describe('Snapshot Test', () => {
+    beforeEach(() => {
+        // Mock the Auth0 hook and make it return a logged in state
+        useAuth0.mockReturnValue({
+            loading: true
+        });
     });
-    it('Sign In exists', () => {
-        expect(true).toBeTruthy();
-    });
-    it('Chat button exists', () => {
-        expect(true).toBeTruthy();
-    });
-    it('About button exists', () => {
-        expect(true).toBeTruthy();
+    it('renders correctly logged in, Snapshot', () => {
+            let wrapper = shallow(<App />)
+            expect(wrapper.text()).toEqual('<Loading />');
     });
 });
