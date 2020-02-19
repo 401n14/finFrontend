@@ -114,14 +114,37 @@ function Chat() {
   };
 
 /**
- * all useEffect functions runs both after first render and after every update of 
- * exitMessage
- * userGroup
- * username
- * nickname
- * 
+ * all the following  functions passed to useEffect will run after render is commited to the screen
+*/
+ 
+ /**
+* @function  translateMessage passed to useEffect 
+* @param { object } , message state and translation 
+*  
+*/
+
+/**
+ * @function getLanguage passed to useEffect
+ * will run after render is commited to the screen
  */
 
+ /**
+  * @function  setUserGroup 
+  * @param { object } 
+  * and console log user and user group 
+  */
+
+  /**
+   * @function setName,
+   * @param { object } user nickname
+   * emit username endpoint/ event  from client socket 
+   */
+
+   /**
+    * @function setWelcome 
+    * @param { object } socket value of user 
+    * return user joined the chat ! string 
+    */
   useEffect(() => {
     if (socketVal.exitMessage) {
       setWelcome(socketVal.exitMessage);
@@ -142,12 +165,14 @@ function Chat() {
     }
   }, [name, socket, user.nickname]);
 
+
   useEffect(() => {
     if (socketVal.user) {
       setWelcome(`${socketVal.user} has joined the chat!`);
     }
 
   }, [socketVal.user]);
+
 
   useEffect(() => {
     getLanguage();
@@ -160,10 +185,12 @@ function Chat() {
       })();
     }
   }, [socketVal]);
+ 
 
-  /** render 
-   * DOM elements 
-   */
+/**
+ * render dom elemnts h3, form, input button ...
+ */
+ 
 
   return (
     <div className='Chat'>
