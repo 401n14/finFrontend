@@ -4,6 +4,8 @@ import { useAuth0 } from '../react-auth0-spa.js';
 import FormSelect from '../components/FormSelect';
 import Header from '../components/Header';
 import SendMessage from '../components/SendMessage';
+import ChatMessages from '../components/ChatMessages';
+
 
 import data from '../components/data/data';
 
@@ -42,14 +44,9 @@ function Chat() {
       let json = await res.text();
 
       socketVal.message = await json;
-
+      let timeStamp = new Date();
       let msg = [...groupMessage];
-
-      msg.push(
-        <p>
-          {socketVal.name}: {socketVal.message}
-        </p>
-      );
+      msg.push(`${timeStamp.toUTCString()} ${socketVal.name.toUpperCase()}: ${socketVal.message}`);
 
       setGroupMessage(msg);
     },
@@ -132,8 +129,9 @@ function Chat() {
           setMessage(e.target.value);
         }}
       />
-
-      <p className='chat-output'>{groupMessage}</p>
+      
+      <ChatMessages>{groupMessage}</ChatMessages>
+  
     </div>
   );
 }
