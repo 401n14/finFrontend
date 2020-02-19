@@ -33,6 +33,8 @@ beforeEach(() => {
 afterEach(() => {
   document.body.removeChild(container);
   container = null;
+
+  jest.clearAllMocks()
 });
 
 describe('Chat', () => {
