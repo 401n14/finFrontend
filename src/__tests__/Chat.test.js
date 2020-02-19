@@ -39,21 +39,28 @@ afterEach(() => {
 
 describe('Chat', () => {
   it('Renders button to send message', () => {
+    let originalError = console.error;
+    console.error = jest.fn();
+
     act(() => {
       ReactDOM.render(<Chat />, container);
     });
     const button = container.querySelector('button');
 
     expect(button.textContent).toBe('Send Message');
+    console.error = originalError;
   });
 
   it('Provides welcome message', () => {
+    let originalError = console.error;
+    console.error = jest.fn();
+
     act(() => {
         ReactDOM.render(<Chat />, container);
       });
 
       const header = container.querySelector('h1');
       expect(header.textContent).toBe('Welcome!');
-
+      console.error = originalError;
   })
 });
