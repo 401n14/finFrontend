@@ -13,8 +13,8 @@ let images = [
   'https://i.imgur.com/QFtYvKT.jpg'];
 
 
-const Home = () => {
-  const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const Home = () => {
+    const { isAuthenticated, loginWithRedirect } = useAuth0();
 
   return (
     <Fragment>
