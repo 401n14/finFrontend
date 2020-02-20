@@ -10,8 +10,13 @@ import ChatUsers from '../components/ChatUsers';
 import data from '../components/data/data';
 
 
+//emoji set up
+
+import "emoji-mart/css/emoji-mart.css";
+import { Picker } from 'emoji-mart';
 
 const fetch = require('node-fetch');
+
 
 /**
  * @function chat  component 
@@ -32,6 +37,8 @@ function Chat() {
   const [translation, setTranslation] = useState('en');
   const [groupMessage, setGroupMessage] = useState([]);
   const [userGroup, setUserGroup] = useState({});
+
+  const [showEmojis, setShowEmojis] = useState(false);
 
   /**
    * @param { object } end points or events  socket, socketVal and isConnected 
@@ -95,6 +102,29 @@ function Chat() {
       sendMessage(e);
     }
   };
+
+  let  addEmoji = e => {
+    console.log(e.native);
+    setMessage(e.native);
+    let emoji = e.native;
+    setShowEmojis({
+      text: showEmojis + emoji
+    });
+  };
+
+
+  let closeMenu = (e)  => {
+    console.log(setShowEmojis.emojiPicker);
+    if (setShowEmojis.emojiPicker !== null && !setShowEmojis.emojiPicker.contains(e.target)) {
+      setShowEmojis(
+        {
+          showEmojis: false
+        },
+        () => document.removeEventListener("click", closeMenu())
+      );
+    }
+  };
+
 
 /**
  * 
@@ -214,6 +244,21 @@ function Chat() {
           setMessage(e.target.value);
         }}
       />
+      {showEmojis ? (<span style={styles.emojiPicker} ref={el => setShowEmojis.emojiPicker = el}>
+
+
+<Picker  
+       onSelect={addEmoji}
+       emojiTooltip={true}
+       title="weChat"
+     
+       />
+
+</span>) : (
+<p  style={styles.getEmojiButton} onClick={setShowEmojis}>
+    {String.fromCodePoint(0x1f60a)}
+    </p>
+  )}
       
       <ChatMessages>{groupMessage}</ChatMessages>
       <ChatUsers>{userGroup}</ChatUsers>
@@ -222,3 +267,21 @@ function Chat() {
 }
 
 export default Chat;
+
+
+const styles ={
+
+  emojiPicker: {
+     position: "absolute",
+     bottom: 10,
+     right: 0,
+     cssFloat: "right",
+     marginLeft: "200px"
+  },
+  getEmojiButton: {
+   cssFloat: "right",
+   border: "none",
+   margin: 0,
+   cursor: "pointer"
+ },
+ }
