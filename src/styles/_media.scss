@@ -1,0 +1,65 @@
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  html{
+    font-size: 45%;
+  }
+
+  .contain{
+    margin-bottom: 2rem;
+  }
+
+  .mobile{
+    display: none;
+  }
+
+  [class*="col-"] {
+    width: 100%;
+  }
+  .hero-image{
+    margin-top: 10vh;
+    min-width: 100%;
+    min-height: 100%;
+    clip-path: none;
+  }
+
+  .navbar-toggler{
+    height: 5rem;
+    width: 7rem;
+    border: 1px solid $color-primary;
+    cursor: pointer;
+
+    &:active,
+    &:focus
+    {
+      outline: none;
+    }
+
+    &::after{
+      content: '';
+      display: block;
+      padding: 5%;
+      height: 1%;
+      border-bottom: 1px solid $color-primary;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 2400px) {
+  /* For mobile phones: */
+  html{
+    font-size: 100%;
+  }
+
+
+}
+
+
+@media only screen and (min-width: 2400px) {
+  /* For mobile phones: */
+  html{
+    font-size: 120%;
+  }
+
+
+}

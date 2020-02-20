@@ -1,0 +1,80 @@
+.btn{
+  display: inline-block;
+  border-radius: 3rem;
+  box-sizing: border-box;
+  width: 15rem;
+  outline: none;
+  border: none;
+  height: 5rem;
+  margin: 1rem;
+  font-family: $font-secondary;
+  font-weight: bold;
+  font-size: 1.3rem;
+  transition: all .2s;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &-small{
+    width: 1rem;
+    // height: 3rem;
+    position: relative;
+    left: 35vw;
+  }
+   
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem rgba(black,.2);
+
+    &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+  }
+  &:active,
+  &:focus {
+      transform: translateY(-1px);
+      box-shadow: 0 .2rem .5rem rgba(black,.2);
+  }
+
+  &-primary{
+    background-color: $color-accent-red;
+    color: white;
+    &:hover{
+      background-color: $color-accent-red;
+      color: white;
+    }
+  }
+  
+  &-secondary{
+    background-color: $color-primary;
+    color: white;
+  }
+
+  &-outline{
+    box-sizing: border-box;
+    position: relative;
+    color: $color-primary-dark;
+    border: 1px solid $color-primary-light;
+    &:hover{
+      @include gradient-text;
+    }
+  }
+
+  &-outline-white{
+    
+    border: 1.5px solid rgba(255,255,255,0.5);
+    color: white;
+    &:hover, :active, :focus{
+      color: white;
+    }
+  }
+
+  &-shadow{
+    box-shadow: 0px 1rem .8rem -.6rem rgba(0,0,0,0.75);
+    @include gradient-text;
+    &:hover{
+      background-color: $color-primary;
+      color: white;
+    }
+  }
+}

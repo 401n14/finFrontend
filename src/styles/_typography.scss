@@ -1,0 +1,27 @@
+p{
+  font-size: 1.5rem;
+}
+
+li, a{
+  font-size: 1.5rem;
+}
+
+.light{
+  font-weight: 400;
+}
+
+.medium{
+  font-weight: 500;
+}
+
+.bold{
+  font-weight: 700;
+}
+
+.primary{
+  font-family: $font-primary;
+}
+
+.secondary{
+  font-family: $font-secondary;
+}
