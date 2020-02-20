@@ -5,7 +5,7 @@ import FormSelect from '../components/FormSelect';
 import Header from '../components/Header';
 import SendMessage from '../components/SendMessage';
 import ChatMessages from '../components/ChatMessages';
-
+import ChatUsers from '../components/ChatUsers';
 
 import data from '../components/data/data';
 
@@ -131,7 +131,7 @@ function Chat() {
       />
       
       <ChatMessages>{groupMessage}</ChatMessages>
-  
+      <ChatUsers>{userGroup}</ChatUsers>
     </div>
   );
 }
