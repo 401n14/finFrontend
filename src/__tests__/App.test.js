@@ -8,7 +8,7 @@ import { useAuth0 } from '../react-auth0-spa.js';
 
 configure({ adapter: new Adapter() });
 
-jest.mock('../react-auth0-spa.js');
+jest.mock('../react-auth0-spa.js' );
 
 describe('Snapshot Test', () => {
   beforeEach(() => {
