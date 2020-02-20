@@ -26,7 +26,7 @@ function Triple(props) {
     }
     return imageElements;
   }
-  return <div className="triple">{generateImages()}</div>;
+  return <div className="triple mobile">{generateImages()}</div>;
 }
 
 export default Triple;

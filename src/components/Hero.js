@@ -1,14 +1,13 @@
 import React from "react";
-
+import { useAuth0 } from "../react-auth0-spa";
 
 function Hero(props) {
-  console.log(props.children);
+  
 
   return (
-    <div className="hero-container">
 
       <div className="contain">
-        <div className="col-2">
+        <div className="col-2 mobile">
           {props.children[0]}
         </div>
         <div className="col-2 hero-image">
@@ -34,7 +33,6 @@ function Hero(props) {
           </div>
         </div>
       </div>
-    </div>
   );
 
 }

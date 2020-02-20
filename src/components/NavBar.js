@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink as RouterNavLink } from "react-router-dom";
+import { NavLink as RouterNavLink, withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
@@ -21,7 +21,8 @@ import { useAuth0 } from "../react-auth0-spa";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [transparent, setTransparent] = useState({backgroundColor: `rgba(255,255,255,0)`})
+  const [transparent, setTransparent] = useState(window.innerWidth < 768 ? { backgroundColor: `rgba(255,255,255,1)` } : { backgroundColor: `rgba(255,255,255,0)` })
+  const [navButtonColor, setNavButtonColor] = useState(window.innerWidth < 768 ? { color: '#0975A7'} : {color: 'white'})
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const toggle = () => setIsOpen(!isOpen);
 
@@ -30,9 +31,19 @@ const NavBar = () => {
   }, []);
 
   function handleScroll(e){
-    if (window.pageYOffset < 25) setTransparent({ backgroundColor: `rgba(255,255,255,0)` })
-    if (window.pageYOffset < 100 && window.pageYOffset > 25) setTransparent({ backgroundColor: `rgba(255,255,255,0.5)` })
-    if(window.pageYOffset > 100) setTransparent({ backgroundColor: `rgba(255,255,255,1)` })
+    if(window.innerWidth < 768){
+      setTransparent({ backgroundColor: `rgba(255,255,255,1)` })
+    }else{
+      if (window.pageYOffset < 25) {
+        setTransparent({ backgroundColor: `rgba(255,255,255,0)` })
+        setNavButtonColor({color: 'white'})
+      }
+      if (window.pageYOffset < 100 && window.pageYOffset > 25) {
+        setNavButtonColor({ color: '#0975A7' });
+        setTransparent({ backgroundColor: `rgba(255,255,255,0.5)` })
+      }
+      if(window.pageYOffset > 100) setTransparent({ backgroundColor: `rgba(255,255,255,1)` })
+    }
 
   }
 
@@ -91,6 +102,7 @@ const NavBar = () => {
               {!isAuthenticated && (
                 <NavItem>
                   <Button
+                    style={navButtonColor}
                     id="qsLoginBtn"
                     className="btn btn-outline-white btn-small"
                     value='Login'
@@ -133,6 +145,7 @@ const NavBar = () => {
               <Nav className="d-md-none" navbar>
                 <NavItem>
                   <Button
+                    style={navButtonColor}
                     id="qsLoginBtn"
                     value='Login'
                     className='btn btn-outline-white btn-small'
