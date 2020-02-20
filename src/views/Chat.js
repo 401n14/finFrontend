@@ -2,6 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import useSockets from '../utils/useSockets';
 import { useAuth0 } from '../react-auth0-spa.js';
 import FormSelect from '../components/FormSelect';
+import Header from '../components/Header';
+import SendMessage from '../components/SendMessage';
+import ChatMessages from '../components/ChatMessages';
+import ChatUsers from '../components/ChatUsers';
+
 import data from '../components/data/data';
 
 
@@ -22,7 +27,7 @@ const fetch = require('node-fetch');
 function Chat() {
   const [name, setName] = useState(null);
   const [welcome, setWelcome] = useState('Welcome!');
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [language, setLanguage] = useState('English');
   const [translation, setTranslation] = useState('en');
   const [groupMessage, setGroupMessage] = useState([]);
@@ -55,7 +60,6 @@ function Chat() {
     );
     let json = await res.text();
     setTranslation(json);
-   
   }, [language]);
 
 
@@ -77,14 +81,9 @@ function Chat() {
       let json = await res.text();
 
       socketVal.message = await json;
-
+      let timeStamp = new Date();
       let msg = [...groupMessage];
-
-      msg.push(
-        <p>
-          {socketVal.name}: {socketVal.message}
-        </p>
-      );
+      msg.push(`${timeStamp.toLocaleString()} ${socketVal.name.toUpperCase()}: ${socketVal.message}`);
 
       setGroupMessage(msg);
     },
@@ -154,14 +153,13 @@ function Chat() {
   useEffect(() => {
     if (socketVal.userGroup) {
       setUserGroup(socketVal.userGroup);
-      console.log('USER GROUP: ', userGroup);
     }
   }, [socketVal.userGroup, userGroup]);
 
   useEffect(() => {
     setName(user.nickname);
     if (name) {
-      socket.emit("username", {name});
+      socket.emit('username', { name });
     }
   }, [name, socket, user.nickname]);
 
@@ -170,7 +168,6 @@ function Chat() {
     if (socketVal.user) {
       setWelcome(`${socketVal.user} has joined the chat!`);
     }
-
   }, [socketVal.user]);
 
 
@@ -179,7 +176,7 @@ function Chat() {
   }, [getLanguage]);
 
   useEffect(() => {
-   if (socketVal.name && socketVal.message) {
+    if (socketVal.name && socketVal.message) {
       (async () => {
         await translateMessage({ message: socketVal.message, translation });
       })();
@@ -194,7 +191,8 @@ function Chat() {
 
   return (
     <div className='Chat'>
-      <h1 className='chat-heading'>{welcome}</h1>
+      <Header>{welcome}</Header>
+
       <h3>
         {isConnected
           ? 'You are connected to the chat'
@@ -208,21 +206,17 @@ function Chat() {
         }}
       />
 
-      <div className='chat-section'>
-        <button className='chat-button' onClick={sendMessage}>
-          Send Message
-        </button>
-        <input
-          type='text'
-          className='chat-input'
-          value={message}
-          onKeyUp={handleEnter}
-          onChange={e => {
-            setMessage(e.target.value);
-          }}
-        />
-      </div>
-      <p className='chat-output'>{groupMessage}</p>
+      <SendMessage
+        onClick={sendMessage}
+        value={message}
+        onKeyUp={handleEnter}
+        onChange={e => {
+          setMessage(e.target.value);
+        }}
+      />
+      
+      <ChatMessages>{groupMessage}</ChatMessages>
+      <ChatUsers>{userGroup}</ChatUsers>
     </div>
   );
 }

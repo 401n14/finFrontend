@@ -5,14 +5,12 @@ import Adapter from 'enzyme-adapter-react-16';
 
 configure({adapter:new Adapter()});
 
-xdescribe('Default Test', () => {
-    it('', () => {
-        expect(true).toBeTruthy();
-    });
-});
 describe('Loading Test', () => {
     const wrapper = shallow(
 <Loading />
     );
+    it('', () => {
     expect(wrapper).toBeTruthy();
+});
+
 });
