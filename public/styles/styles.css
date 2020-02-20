@@ -169,6 +169,75 @@ li, a {
 .secondary {
   font-family: "PT Sans", sans-serif; }
 
+.chat {
+  margin-top: 15vh; }
+  .chat .users {
+    height: 95vh;
+    background: #F9F8F8;
+    max-width: 20vw;
+    border-radius: .5rem; }
+    .chat .users-header {
+      text-align: center;
+      font-family: "Exo 2", sans-serif;
+      font-weight: bold;
+      color: #0975A7;
+      font-size: 3rem; }
+    .chat .users-username {
+      font-family: "PT Sans", sans-serif;
+      color: #1FA3B7;
+      margin-left: 1rem; }
+  .chat-btn {
+    width: 14rem;
+    height: 5rem; }
+    .chat-btn:hover {
+      background-color: #1FA3B7 !important; }
+  .chat-svg {
+    fill: white;
+    width: 1rem;
+    opacity: 80%;
+    left: -4rem;
+    bottom: -1rem;
+    position: relative; }
+  .chat-information {
+    margin-left: 3rem;
+    max-width: 70rem;
+    padding: .5rem;
+    border-radius: 1rem; }
+    .chat-information:hover {
+      background-color: #F9F8F8; }
+    .chat-information-user {
+      display: flex;
+      align-items: center;
+      width: 25rem; }
+    .chat-information-avatar {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      box-shadow: 0px 0.5rem 0.5rem -0.3rem rgba(0, 0, 0, 0.75);
+      margin-right: 1rem;
+      background-size: cover;
+      background-position: center; }
+    .chat-information-username {
+      font-family: "PT Sans", sans-serif;
+      color: #0975A7;
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-right: 2rem; }
+    .chat-information-timestamp {
+      font-family: "PT Sans", sans-serif;
+      opacity: 50%; }
+    .chat-information-message {
+      font-family: "PT Sans", sans-serif;
+      font-size: 2rem;
+      position: relative;
+      left: 5rem;
+      max-width: 60rem; }
+  .chat-typing {
+    padding-top: 5rem;
+    width: 70%;
+    height: 10rem;
+    margin: 0 5%; }
+
 html {
   font-size: 62.5%; }
 
@@ -188,40 +257,6 @@ li, a {
   box-shadow: 0px 1rem 1rem -0.6rem rgba(0, 0, 0, 0.75); }
   .icon-large-svg {
     width: 4rem; }
-
-.input {
-  position: absolute;
-  transform: all .3s;
-  margin-top: 2rem; }
-  .input-label {
-    font-family: "PT Sans", sans-serif;
-    color: white;
-    font-size: 1.5rem;
-    padding: .8rem 1.5rem;
-    position: relative;
-    left: 2rem;
-    border-radius: .3rem;
-    background-color: #1FA3B7;
-    box-shadow: 0px 0.2rem 1rem -0.6rem rgba(0, 0, 0, 0.75); }
-  .input-text {
-    text-align: center;
-    width: 30rem;
-    height: 4rem;
-    font-family: "PT Sans", sans-serif;
-    color: #0975A7;
-    font-size: 1.5rem;
-    box-shadow: 0px 0.2rem 1rem -0.6rem rgba(0, 0, 0, 0.75);
-    border: none; }
-    .input-text:active, .input-text:focus {
-      border: none;
-      outline: none; }
-  .input-svg {
-    width: 2rem;
-    fill: #1FA3B7;
-    position: relative;
-    right: 4rem;
-    top: .5rem;
-    opacity: 40%; }
 
 .dropdown {
   position: fixed;
@@ -281,7 +316,7 @@ li, a {
       list-style: none;
       transition: all .3s; }
       .header-nav li:hover {
-        transform: scale(1.2); }
+        transform: scale(1); }
     .header-nav a {
       font-family: "Exo 2", sans-serif;
       font-weight: bold;
@@ -292,7 +327,7 @@ li, a {
       padding-bottom: .3rem;
       transition: all .3s; }
       .header-nav a:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
         background: linear-gradient(90deg, #43cadf 35%, #0975a7 100%);
         -webkit-background-clip: text;
         background-clip: text;
@@ -307,72 +342,9 @@ li, a {
         right: 0;
         border: 0px solid #0975A7; }
       .header-nav a:hover:after {
-        width: 95%;
+        width: 90%;
+        margin: 5%;
         border: 1px solid #0975A7; }
-
-.chat {
-  margin-top: 30rem; }
-  .chat .users {
-    height: 95vh;
-    background: #F9F8F8;
-    max-width: 20vw;
-    border-radius: .5rem; }
-    .chat .users-header {
-      text-align: center;
-      font-family: "Exo 2", sans-serif;
-      font-weight: bold;
-      color: #0975A7;
-      font-size: 3rem; }
-    .chat .users-username {
-      font-family: "PT Sans", sans-serif;
-      color: #1FA3B7;
-      margin-left: 1rem; }
-  .chat-btn {
-    width: 10rem;
-    height: 3.3rem; }
-  .chat-svg {
-    fill: white;
-    width: 1rem;
-    opacity: 60%;
-    position: relative;
-    right: 3rem; }
-  .chat-information {
-    margin-left: 3rem;
-    max-width: 70rem;
-    padding: .5rem;
-    border-radius: 1rem; }
-    .chat-information:hover {
-      background-color: #F9F8F8; }
-    .chat-information-user {
-      display: flex;
-      align-items: center;
-      width: 25rem; }
-    .chat-information-avatar {
-      height: 4rem;
-      width: 4rem;
-      border-radius: 50%;
-      box-shadow: 0px 0.5rem 0.5rem -0.3rem rgba(0, 0, 0, 0.75);
-      margin-right: 1rem;
-      background-size: cover;
-      background-position: center; }
-    .chat-information-username {
-      font-family: "PT Sans", sans-serif;
-      color: #0975A7;
-      margin-right: 1rem; }
-    .chat-information-timestamp {
-      font-family: "PT Sans", sans-serif;
-      opacity: 50%; }
-    .chat-information-message {
-      font-family: "PT Sans", sans-serif;
-      font-size: 1.5rem;
-      position: relative;
-      left: 5rem;
-      bottom: 3rem;
-      max-width: 60rem; }
-  .chat-typing {
-    padding-top: 5rem;
-    width: 70%;
-    margin: 0 5%; }
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */

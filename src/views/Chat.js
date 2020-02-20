@@ -37,9 +37,9 @@ function Chat() {
     async data => {
       let res = await fetch(
         'https://translation-server.herokuapp.com/translate?message=' +
-          data.message +
-          '&translation=' +
-          data.translation
+        data.message +
+        '&translation=' +
+        data.translation
       );
       let json = await res.text();
 
@@ -105,34 +105,41 @@ function Chat() {
   }, [socketVal]);
 
   return (
-    <div className='Chat'>
+    <div>
       <Header>{welcome}</Header>
+      <div className='chat'>
+        <div className='connection-information'>
+        <h3 class=' primary bold'>
+          {isConnected
+            ? 'You are connected to the chat'
+            : 'You are not connected to the chat'}
+        </h3>
 
-      <h3>
-        {isConnected
-          ? 'You are connected to the chat'
-          : 'You are not connected to the chat'}
-      </h3>
+        <FormSelect
+          list={data.Languages}
+          onChange={e => {
+            setLanguage(e.target.value);
+          }}
+        />
 
-      <FormSelect
-        list={data.Languages}
-        onChange={e => {
-          setLanguage(e.target.value);
-        }}
-      />
+        </div>
+        <div className='chat-messages'>
+        <ChatMessages className='chat'>{groupMessage}</ChatMessages>
 
-      <SendMessage
-        onClick={sendMessage}
-        value={message}
-        onKeyUp={handleEnter}
-        onChange={e => {
-          setMessage(e.target.value);
-        }}
-      />
-      
-      <ChatMessages>{groupMessage}</ChatMessages>
-  
+        </div>
+        <SendMessage
+          onClick={sendMessage}
+          value={message}
+          onKeyUp={handleEnter}
+          onChange={e => {
+            setMessage(e.target.value);
+          }}
+        />
+
+
+      </div>
     </div>
+
   );
 }
 

@@ -5,7 +5,7 @@ function FormSelect(props) {
 
     options = props.list.map((item, ind)=> {
       return (
-        <option key={ind} value={item.name}>
+        <option key={ind} value={item.name} className='option'>
           {item.name}
         </option>
       );
