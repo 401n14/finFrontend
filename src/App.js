@@ -11,7 +11,7 @@ import Profile from "./views/Profile";
 import Chat from "./views/Chat";
 import { useAuth0 } from "./react-auth0-spa";
 import history from "./utils/history";
-import TripleImage from './components/TripleImage';
+
 
 // styles
 
