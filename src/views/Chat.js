@@ -9,7 +9,20 @@ import ChatUsers from '../components/ChatUsers';
 
 import data from '../components/data/data';
 
+
+
 const fetch = require('node-fetch');
+
+/**
+ * @function chat  component 
+ * Set and Initialize state variables name , welcome, message , language ,
+ * translation , groupMessaging, userGroup.
+ * @exports default chat
+ */
+
+  
+
+
 
 function Chat() {
   const [name, setName] = useState(null);
@@ -19,11 +32,27 @@ function Chat() {
   const [translation, setTranslation] = useState('en');
   const [groupMessage, setGroupMessage] = useState([]);
   const [userGroup, setUserGroup] = useState({});
+
+  /**
+   * @param { object } end points or events  socket, socketVal and isConnected 
+   *  fetch data from backend socket server 
+   */
   const { socket, socketVal, isConnected } = useSockets(
     'https://final-tcp-server.herokuapp.com/',
     'broadcast'
   );
+
+  /**
+   * @param { object}  user 
+   * initialize auth0 
+   */
   const { user } = useAuth0();
+
+  /**
+   * @function   getLanguage
+   * @function  cb  asynchronously  fetch data from translation server + language
+   * set translated language state in json format and update language 
+   */
 
   const getLanguage = useCallback(async () => {
     let res = await fetch(
@@ -32,6 +61,14 @@ function Chat() {
     let json = await res.text();
     setTranslation(json);
   }, [language]);
+
+
+  /**
+   * @function translateMessage
+   * cb asynchronously fetch data from translation server + data.message, &translation and data.translation
+   * assign soketVal.message variable to json format response 
+   * @push to updated state objects socketVal name and message 
+   */
 
   const translateMessage = useCallback(
     async data => {
@@ -59,6 +96,14 @@ function Chat() {
     }
   };
 
+/**
+ * 
+ * @param {object} e  event object for senMessage handler 
+ * if message emit event or endpoint  message 
+ * else message state variable to empty string 
+ */
+
+
   const sendMessage = e => {
     e.preventDefault();
     if (message) {
@@ -67,6 +112,38 @@ function Chat() {
     setMessage('');
   };
 
+/**
+ * all the following  functions passed to useEffect will run after render is commited to the screen
+*/
+ 
+ /**
+* @function  translateMessage passed to useEffect 
+* @param { object } , message state and translation 
+*  
+*/
+
+/**
+ * @function getLanguage passed to useEffect
+ * will run after render is commited to the screen
+ */
+
+ /**
+  * @function  setUserGroup 
+  * @param { object } 
+  * and console log user and user group 
+  */
+
+  /**
+   * @function setName,
+   * @param { object } user nickname
+   * emit username endpoint/ event  from client socket 
+   */
+
+   /**
+    * @function setWelcome 
+    * @param { object } socket value of user 
+    * return user joined the chat ! string 
+    */
   useEffect(() => {
     if (socketVal.exitMessage) {
       setWelcome(socketVal.exitMessage);
@@ -86,11 +163,13 @@ function Chat() {
     }
   }, [name, socket, user.nickname]);
 
+
   useEffect(() => {
     if (socketVal.user) {
       setWelcome(`${socketVal.user} has joined the chat!`);
     }
   }, [socketVal.user]);
+
 
   useEffect(() => {
     getLanguage();
@@ -103,6 +182,12 @@ function Chat() {
       })();
     }
   }, [socketVal]);
+ 
+
+/**
+ * render dom elemnts h3, form, input button ...
+ */
+ 
 
   return (
     <div className='Chat'>
