@@ -16,6 +16,7 @@ Array [
       <div
         className="container"
       >
+
         <svg
           className="header-svg"
           viewBox="0 0 20 20"
@@ -46,13 +47,16 @@ Array [
         >
           <ul
             className="header-nav navbar-nav"
+
           >
             <li
               className="nav-item"
             >
               <a
                 aria-current="page"
+
                 className="header-nav-text nav-link active"
+
                 href="/"
                 onClick={[Function]}
                 style={Object {}}
@@ -100,6 +104,7 @@ Array [
               className="nav-item"
             >
               <button
+
                 className="btn btn-outline-white btn-small"
                 onClick={[Function]}
                 style={
@@ -115,6 +120,7 @@ Array [
         </div>
       </div>
     </nav>
+
   </div>,
   <div
     className="contain"
