@@ -104,12 +104,18 @@ function Chat() {
     }
   }, [socketVal]);
 
+  useEffect( () => {
+    const messages = document.querySelector('.overflow');
+    messages.scrollTop = messages.scrollHeight;
+
+  },[groupMessage]);
+
   return (
     <div>
       <Header>{welcome}</Header>
       <div className='chat'>
         <div className='connection-information'>
-        <h3 class=' primary bold'>
+        <h3 className=' primary bold'>
           {isConnected
             ? 'You are connected to the chat'
             : 'You are not connected to the chat'}
@@ -123,7 +129,7 @@ function Chat() {
         />
 
         </div>
-        <div className='chat-messages'>
+        <div className='chat-messages' id='chat'>
         <ChatMessages className='chat'>{groupMessage}</ChatMessages>
 
         </div>

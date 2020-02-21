@@ -14,7 +14,7 @@ function ChatMessages(props) {
                         <div
                             className={`${props.className}-information-avatar`}
                             style={{
-                                backgroundImage: `url(${user.picture}})`
+                                backgroundImage: `url(${user.picture})`
                             }}
                         />
                         <h3 className={`${props.className}-information-username`}>{user.nickname}</h3>

@@ -1,5 +1,6 @@
 @import './layout';
 @import './mixins';
+@import './animations';
 @import './variables';
 @import './components/buttons';
 @import './components/hero';
@@ -7,6 +8,7 @@
 @import './components/inputs';
 @import './typography';
 @import './components/chat';
+@import './components/user';
 
 
 html{
@@ -42,6 +44,16 @@ li, a{
 .dropdown{
   position: fixed;
   right: 5rem;
+
+  &-header, &-item, &-profile{
+    color: $color-primary !important;
+    font-family: $font-secondary !important;
+
+    &:hover{
+      @include gradient-background;
+      color: white !important;
+    }
+  }
 }
 .navbar{
   background: rgba($color: #000000, $alpha: 0);
