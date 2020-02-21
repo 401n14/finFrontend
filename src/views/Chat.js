@@ -19,6 +19,7 @@ function Chat() {
   const [translation, setTranslation] = useState('en');
   const [groupMessage, setGroupMessage] = useState([]);
   const [userGroup, setUserGroup] = useState({});
+  const [activeUsers, setActiveUsers] = useState('');
   const { socket, socketVal, isConnected } = useSockets(
     'https://final-tcp-server.herokuapp.com/',
     'broadcast'
@@ -104,34 +105,39 @@ function Chat() {
     }
   }, [socketVal]);
 
-  useEffect( () => {
+  useEffect(() => {
     const messages = document.querySelector('.overflow');
     messages.scrollTop = messages.scrollHeight;
 
-  },[groupMessage]);
+  }, [groupMessage]);
+
+  useEffect(() => {
+    let list = Object.keys(userGroup).map((user, index) => <p key={index} className='secondary'>{userGroup[user]}</p>)
+    setActiveUsers(list);
+  }, [userGroup])
 
   return (
     <div>
-      <Header>{welcome}</Header>
+      <Header>{welcome}{activeUsers}</Header>
 
       <div className='chat'>
         <div className='connection-information'>
-        <h3 className=' primary bold'>
-          {isConnected
-            ? 'You are connected to the chat'
-            : 'You are not connected to the chat'}
-        </h3>
-
-        <FormSelect
-          list={data.Languages}
-          onChange={e => {
-            setLanguage(e.target.value);
-          }}
-        />
+          <h3 className=' primary bold'>
+            {isConnected
+              ? 'You are connected to the chat'
+              : 'You are not connected to the chat'}
+          </h3>
+         
+          <FormSelect
+            list={data.Languages}
+            onChange={e => {
+              setLanguage(e.target.value);
+            }}
+          />
 
         </div>
         <div className='chat-messages' id='chat'>
-        <ChatMessages className='chat'>{groupMessage}</ChatMessages>
+          <ChatMessages className='chat'>{groupMessage}</ChatMessages>
 
         </div>
         <SendMessage

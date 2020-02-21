@@ -9,8 +9,18 @@
       text-transform: uppercase;
       padding: 1rem;
       margin-top: 2rem;
-      @include gradient-text;
+    }
+    h2{
+      color: $color-primary-dark;
+      border-bottom: 1px solid $color-primary-dark;
+      margin-bottom: 5px;
+    }
+    h1{
+       @include gradient-text;
       animation-iteration-count:1;
       animation: disappear 4s ease-in forwards;
+    }
+    p{
+       @include gradient-text;
     }
 }
