@@ -14,6 +14,7 @@ import data from '../components/data/data';
 
 import "emoji-mart/css/emoji-mart.css";
 import { Picker } from 'emoji-mart';
+import Button from '../components/Button';
 
 const fetch = require('node-fetch');
 
@@ -25,7 +26,7 @@ const fetch = require('node-fetch');
  * @exports default chat
  */
 
-  
+
 
 
 
@@ -105,8 +106,7 @@ function Chat() {
     }
   };
 
-  let  addEmoji = e => {
-    console.log(e.native);
+  let addEmoji = e => {
     setMessage(e.native);
     let emoji = e.native;
     setShowEmojis({
@@ -115,8 +115,7 @@ function Chat() {
   };
 
 
-  let closeMenu = (e)  => {
-    console.log(setShowEmojis.emojiPicker);
+  let closeMenu = (e) => {
     if (setShowEmojis.emojiPicker !== null && !setShowEmojis.emojiPicker.contains(e.target)) {
       setShowEmojis(
         {
@@ -128,12 +127,12 @@ function Chat() {
   };
 
 
-/**
- * 
- * @param {object} e  event object for senMessage handler 
- * if message emit event or endpoint  message 
- * else message state variable to empty string 
- */
+  /**
+   * 
+   * @param {object} e  event object for senMessage handler 
+   * if message emit event or endpoint  message 
+   * else message state variable to empty string 
+   */
 
 
   const sendMessage = e => {
@@ -144,26 +143,26 @@ function Chat() {
     setMessage('');
   };
 
-/**
- * all the following  functions passed to useEffect will run after render is commited to the screen
-*/
- 
- /**
-* @function  translateMessage passed to useEffect 
-* @param { object } , message state and translation 
-*  
-*/
+  /**
+   * all the following  functions passed to useEffect will run after render is commited to the screen
+  */
 
-/**
- * @function getLanguage passed to useEffect
- * will run after render is commited to the screen
+  /**
+ * @function  translateMessage passed to useEffect 
+ * @param { object } , message state and translation 
+ *  
  */
 
- /**
-  * @function  setUserGroup 
-  * @param { object } 
-  * and console log user and user group 
-  */
+  /**
+   * @function getLanguage passed to useEffect
+   * will run after render is commited to the screen
+   */
+
+  /**
+   * @function  setUserGroup 
+   * @param { object } 
+   * and console log user and user group 
+   */
 
   /**
    * @function setName,
@@ -171,11 +170,11 @@ function Chat() {
    * emit username endpoint/ event  from client socket 
    */
 
-   /**
-    * @function setWelcome 
-    * @param { object } socket value of user 
-    * return user joined the chat ! string 
-    */
+  /**
+   * @function setWelcome 
+   * @param { object } socket value of user 
+   * return user joined the chat ! string 
+   */
   useEffect(() => {
     if (socketVal.exitMessage) {
       setWelcome(socketVal.exitMessage);
@@ -214,12 +213,12 @@ function Chat() {
       })();
     }
   }, [socketVal]);
- 
 
-/**
- * render dom elemnts h3, form, input button ...
- */
- 
+
+  /**
+   * render dom elemnts h3, form, input button ...
+   */
+
 
   useEffect(() => {
     const messages = document.querySelector('.overflow');
@@ -232,6 +231,18 @@ function Chat() {
     setActiveUsers(list);
   }, [userGroup, message])
 
+  useEffect( () => {
+    let emojis = document.querySelector('#emoji');
+    if(emojis){
+      emojis.addEventListener('mouseup', () => {
+        setTimeout( () => {
+          setShowEmojis(false);
+        }, 500)
+      })
+    }
+  
+  },[showEmojis])
+
   return (
     <div>
       <Header>{welcome}{activeUsers}</Header>
@@ -243,7 +254,7 @@ function Chat() {
               ? 'You are connected to the chat'
               : 'You are not connected to the chat'}
           </h3>
-         
+
           <FormSelect
             list={data.Languages}
             onChange={e => {
@@ -264,19 +275,24 @@ function Chat() {
             setMessage(e.target.value);
           }}
         />
-   {showEmojis ? (<span style={styles.emojiPicker} ref={el => setShowEmojis.emojiPicker = el}>
-<Picker  
-       onSelect={addEmoji}
-       emojiTooltip={true}
-       title="weChat"
-     
-       />
+        {showEmojis ? (<span ref={el => setShowEmojis.emojiPicker = el}>
+          <div className='emoji mobile' id='emoji'>
+            <Picker
+              onSelect={addEmoji}
+              emojiTooltip={true}
+              title="weChat"
+            />
+          </div>
 
-</span>) : (
-<p  style={styles.getEmojiButton} onClick={setShowEmojis}>
-    {String.fromCodePoint(0x1f60a)}
-    </p>
-  )}
+        </span>) : (
+            <div className='emoji mobile'>
+              <button className='emoji-x' onClick={() => setShowEmojis(true)}>
+                {String.fromCodePoint(0x1f60a)}
+              </button>
+
+            </div>
+          )}
+
 
       </div>
     </div>
@@ -285,21 +301,3 @@ function Chat() {
 }
 
 export default Chat;
-
-
-const styles ={
-
-  emojiPicker: {
-     position: "absolute",
-     bottom: 10,
-     right: 0,
-     cssFloat: "right",
-     marginLeft: "200px"
-  },
-  getEmojiButton: {
-   cssFloat: "right",
-   border: "none",
-   margin: 0,
-   cursor: "pointer"
- },
- }
