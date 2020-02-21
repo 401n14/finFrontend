@@ -38,12 +38,14 @@ function Chat() {
   const [groupMessage, setGroupMessage] = useState([]);
   const [userGroup, setUserGroup] = useState({});
 
+
   const [showEmojis, setShowEmojis] = useState(false);
 
   /**
    * @param { object } end points or events  socket, socketVal and isConnected 
    *  fetch data from backend socket server 
    */
+  const [activeUsers, setActiveUsers] = useState('');
   const { socket, socketVal, isConnected } = useSockets(
     'https://final-tcp-server.herokuapp.com/',
     'broadcast'
@@ -81,9 +83,9 @@ function Chat() {
     async data => {
       let res = await fetch(
         'https://translation-server.herokuapp.com/translate?message=' +
-          data.message +
-          '&translation=' +
-          data.translation
+        data.message +
+        '&translation=' +
+        data.translation
       );
       let json = await res.text();
 
@@ -219,34 +221,50 @@ function Chat() {
  */
  
 
+  useEffect(() => {
+    const messages = document.querySelector('.overflow');
+    messages.scrollTop = messages.scrollHeight;
+
+  }, [groupMessage]);
+
+  useEffect(() => {
+    let list = Object.keys(userGroup).map((user, index) => <p key={index} className='secondary'>{userGroup[user]}</p>)
+    setActiveUsers(list);
+  }, [userGroup])
+
   return (
-    <div className='Chat'>
-      <Header>{welcome}</Header>
+    <div>
+      <Header>{welcome}{activeUsers}</Header>
 
-      <h3>
-        {isConnected
-          ? 'You are connected to the chat'
-          : 'You are not connected to the chat'}
-      </h3>
+      <div className='chat'>
+        <div className='connection-information'>
+          <h3 className=' primary bold'>
+            {isConnected
+              ? 'You are connected to the chat'
+              : 'You are not connected to the chat'}
+          </h3>
+         
+          <FormSelect
+            list={data.Languages}
+            onChange={e => {
+              setLanguage(e.target.value);
+            }}
+          />
 
-      <FormSelect
-        list={data.Languages}
-        onChange={e => {
-          setLanguage(e.target.value);
-        }}
-      />
+        </div>
+        <div className='chat-messages' id='chat'>
+          <ChatMessages className='chat'>{groupMessage}</ChatMessages>
 
-      <SendMessage
-        onClick={sendMessage}
-        value={message}
-        onKeyUp={handleEnter}
-        onChange={e => {
-          setMessage(e.target.value);
-        }}
-      />
-      {showEmojis ? (<span style={styles.emojiPicker} ref={el => setShowEmojis.emojiPicker = el}>
-
-
+        </div>
+        <SendMessage
+          onClick={sendMessage}
+          value={message}
+          onKeyUp={handleEnter}
+          onChange={e => {
+            setMessage(e.target.value);
+          }}
+        />
+   {showEmojis ? (<span style={styles.emojiPicker} ref={el => setShowEmojis.emojiPicker = el}>
 <Picker  
        onSelect={addEmoji}
        emojiTooltip={true}
@@ -259,10 +277,10 @@ function Chat() {
     {String.fromCodePoint(0x1f60a)}
     </p>
   )}
-      
-      <ChatMessages>{groupMessage}</ChatMessages>
-      <ChatUsers>{userGroup}</ChatUsers>
+
+      </div>
     </div>
+
   );
 }
 
