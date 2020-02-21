@@ -15,7 +15,7 @@ function ChatMessages(props) {
             let message = itemArray[3];
             let user = itemArray[2];
             let pic = itemArray[1];
-        
+
             return (
                 <div key={ind} className={`${props.className}-information`}>
                     <div className={`${props.className}-information-user`}>
