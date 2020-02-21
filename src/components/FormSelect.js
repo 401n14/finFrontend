@@ -1,5 +1,11 @@
 import React from 'react';
 
+/**
+ * Component for creating drop down menu 
+ * @component FormSelect
+ * @param {object} props json data consisting of language options
+ * @return {ReactElement} HTML markup
+ */
 function FormSelect(props) {
     let options = [];
 

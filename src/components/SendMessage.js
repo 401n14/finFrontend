@@ -1,5 +1,12 @@
 import React from 'react';
-
+/**
+ * Component for sending messages
+ * Input field for users to enter a message
+ * Button to send message
+ * @component SendMessage
+ * @param {object} props
+ * @return {ReactElement} HTML markup
+ */
 function SendMessage(props) {
   return (
     <div>
