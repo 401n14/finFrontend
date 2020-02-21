@@ -12,8 +12,8 @@ function ChatMessages(props) {
         <div className='overflow'>{props.children && props.children.length ? props.children.map((item, ind) => {
             let itemArray= (item.split('PM' || 'AM'));
             let timestamp = itemArray[0];
-            let message = itemArray[1].split(':')[1];
-            let user = itemArray[1].split(':')[0];
+            let message = itemArray[1];
+            let user = itemArray[1];
             console.log(user);
 
             return (
