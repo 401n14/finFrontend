@@ -47,7 +47,8 @@ function Chat() {
       socketVal.message = await json;
       let timeStamp = new Date();
       let msg = [...groupMessage];
-      msg.push(`${timeStamp.toLocaleString()} ${socketVal.name.toUpperCase()}: ${socketVal.message}`);
+     
+      msg.push(`${timeStamp.toLocaleString()} *${socketVal.pic} * ${socketVal.name.toUpperCase()} * ${socketVal.message}`);
 
       setGroupMessage(msg);
     },
@@ -62,8 +63,9 @@ function Chat() {
 
   const sendMessage = e => {
     e.preventDefault();
+    let pic = user.picture;
     if (message) {
-      socket.emit('message', { name, message });
+      socket.emit('message', { name, message , pic});
     }
     setMessage('');
   };
