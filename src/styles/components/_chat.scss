@@ -116,6 +116,7 @@
   max-width: 30rem;
   margin-top: 2rem;
   text-align: center;
+  z-index: 1000;
   h3{
    @include gradient-text;
   font-size: 2rem;
