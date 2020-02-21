@@ -114,7 +114,7 @@ function Chat() {
   useEffect(() => {
     let list = Object.keys(userGroup).map((user, index) => <p key={index} className='secondary'>{userGroup[user]}</p>)
     setActiveUsers(list);
-  }, [userGroup])
+  }, [userGroup, message])
 
   return (
     <div>
