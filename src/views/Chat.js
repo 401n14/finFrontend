@@ -300,6 +300,7 @@ const styles={
     bottom: 10,
     right: 0,
     cssFloat: "right",
-    marginLeft: "200px"
+    marginLeft: "200px",
+    zIndex: 200
   }
 };
