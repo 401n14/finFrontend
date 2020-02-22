@@ -90,4 +90,4 @@ aka **nightJAMMM team**
 
 
 
-* ![UML](UML.JPG)
+* ![UML](Diagram.PNG)
