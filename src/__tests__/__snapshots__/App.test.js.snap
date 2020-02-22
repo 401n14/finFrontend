@@ -1,22 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snapshot Test renders correctly logged in, Snapshot 1`] = `
-<div
-  className="d-flex flex-column h-100"
-  id="app"
->
+Array [
   <div
     className="nav-container"
   >
     <nav
-      className="navbar navbar-expand-md navbar-light bg-light"
+      className="navbar navbar-expand-md"
+      style={
+        Object {
+          "backgroundColor": "rgba(255,255,255,0)",
+        }
+      }
     >
       <div
         className="container"
       >
-        <a
-          className="logo navbar-brand"
-        />
+        <svg
+          className="header-svg"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 4H5a1 1 0 1 1 0-2h11V1a1 1 0 0 0-1-1H4a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V5a1 1 0 0 0-1-1h-7v8l-2-2-2 2V4z"
+          />
+        </svg>
+        <h1
+          className="header-text"
+        >
+          Transcribe
+        </h1>
         <button
           aria-label="Toggle navigation"
           className="navbar-toggler"
@@ -32,19 +45,30 @@ exports[`Snapshot Test renders correctly logged in, Snapshot 1`] = `
           style={Object {}}
         >
           <ul
-            className="mr-auto navbar-nav"
+            className="header-nav navbar-nav"
           >
             <li
               className="nav-item"
             >
               <a
                 aria-current="page"
-                className="nav-link router-link-exact-active"
+                className="header-nav-text nav-link active"
                 href="/"
                 onClick={[Function]}
                 style={Object {}}
               >
                 Home
+              </a>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <a
+                className="header-nav-text special"
+                href="#about"
+                onClick={[Function]}
+              >
+                About Us
               </a>
             </li>
           </ul>
@@ -55,13 +79,15 @@ exports[`Snapshot Test renders correctly logged in, Snapshot 1`] = `
               className="nav-item"
             >
               <button
-                aria-label={null}
-                className="btn-margin btn btn-primary"
-                id="qsLoginBtn"
+                className="btn btn-outline-white btn-small"
                 onClick={[Function]}
-                type="button"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
               >
-                Log in
+                Login
               </button>
             </li>
           </ul>
@@ -72,199 +98,327 @@ exports[`Snapshot Test renders correctly logged in, Snapshot 1`] = `
               className="nav-item"
             >
               <button
-                aria-label={null}
-                className="btn btn-primary btn-block"
-                id="qsLoginBtn"
+                className="btn btn-outline-white btn-small"
                 onClick={[Function]}
-                type="button"
+                style={
+                  Object {
+                    "color": "white",
+                  }
+                }
               >
-                Log in
+                Login
               </button>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-  </div>
+  </div>,
   <div
-    className="flex-grow-1 mt-5 container"
+    className="contain"
   >
     <div
-      className="text-center hero my-5"
+      className="col-2 mobile"
     >
-      <img
-        alt="React logo"
-        className="mb-3 app-logo"
-        src="logo.svg"
-        width="120"
-      />
-      <h1
-        className="mb-4"
-      >
-        Transcribe is AWESOME!
-      </h1>
-      <p
-        className="lead"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ultricies enim. Donec sodales elit id eros lobortis tincidunt. Suspendisse potenti. Nam diam nibh, sodales sed urna in, semper volutpat augue. Suspendisse volutpat lorem nisi, vitae lacinia nulla aliquet eu. Duis non purus convallis, rhoncus urna sed, aliquet tortor. Fusce vel sapien sed metus venenatis pretium ut in neque. Donec condimentum metus sit amet nunc lobortis efficitur. erat.
-      </p>
-    </div>
-    <hr />
-    <div
-      className="next-steps my-5"
-    >
-      <h2
-        className="my-5 text-center"
-      >
-        Learn more about awesome us!
-      </h2>
       <div
-        className="d-flex justify-content-between row"
+        className="triple mobile"
       >
         <div
-          className="mb-4 col-md-5"
-        >
-          <h6
-            className="mb-3"
-          >
-            <a
-              href="https://"
-            >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-link fa-w-16 mr-2"
-                data-icon="link"
-                data-prefix="fas"
-                focusable="false"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 512 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
-                  fill="currentColor"
-                  style={Object {}}
-                />
-              </svg>
-              Transcribe is awesome
-            </a>
-          </h6>
-          <p>
-            Integer eget ex porta, interdum sem quis, mattis ligula. Aliquam varius sapien in posuere fermentum. Vivamus gravida ullamcorper imperdiet. Cras elit mauris, ultrices quis justo hendrerit, elementum bibendum eros. Cras porta risus a fringilla fringilla. Suspendisse eu nisi non urna efficitur elementum id et lectus. 
-          </p>
-        </div>
+          className="triple-img"
+          style={
+            Object {
+              "backgroundImage": "url(https://live.staticflickr.com/5813/30931763465_c7cc26e743_n.jpg)",
+              "backgroundSize": "cover",
+            }
+          }
+        />
         <div
-          className="mb-4 col-md-5"
-        >
-          <h6
-            className="mb-3"
-          >
-            <a
-              href="https://"
-            >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-link fa-w-16 mr-2"
-                data-icon="link"
-                data-prefix="fas"
-                focusable="false"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 512 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
-                  fill="currentColor"
-                  style={Object {}}
-                />
-              </svg>
-              Transcribe is great
-            </a>
-          </h6>
-          <p>
-            Integer eget ex porta, interdum sem quis, mattis ligula. Aliquam varius sapien in posuere fermentum. Vivamus gravida ullamcorper imperdiet. Cras elit mauris, ultrices quis justo hendrerit, elementum bibendum eros. Cras porta risus a fringilla fringilla. Suspendisse eu nisi non urna efficitur elementum id et lectus. 
-          </p>
-        </div>
+          className="triple-img"
+          style={
+            Object {
+              "backgroundImage": "url(https://live.staticflickr.com/8568/15486971303_fe3c25285d.jpg)",
+              "backgroundSize": "cover",
+            }
+          }
+        />
         <div
-          className="mb-4 col-md-5"
-        >
-          <h6
-            className="mb-3"
-          >
-            <a
-              href="https://"
-            >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-link fa-w-16 mr-2"
-                data-icon="link"
-                data-prefix="fas"
-                focusable="false"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 512 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
-                  fill="currentColor"
-                  style={Object {}}
-                />
-              </svg>
-              Transcribe is outstanding
-            </a>
-          </h6>
-          <p>
-            Integer eget ex porta, interdum sem quis, mattis ligula. Aliquam varius sapien in posuere fermentum. Vivamus gravida ullamcorper imperdiet. Cras elit mauris, ultrices quis justo hendrerit, elementum bibendum eros. Cras porta risus a fringilla fringilla. Suspendisse eu nisi non urna efficitur elementum id et lectus.
-          </p>
-        </div>
-        <div
-          className="mb-4 col-md-5"
-        >
-          <h6
-            className="mb-3"
-          >
-            <a
-              href="https://"
-            >
-              <svg
-                aria-hidden="true"
-                className="svg-inline--fa fa-link fa-w-16 mr-2"
-                data-icon="link"
-                data-prefix="fas"
-                focusable="false"
-                role="img"
-                style={Object {}}
-                viewBox="0 0 512 512"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
-                  fill="currentColor"
-                  style={Object {}}
-                />
-              </svg>
-              Transcribe is unbelievable
-            </a>
-          </h6>
-          <p>
-             Integer eget ex porta, interdum sem quis, mattis ligula. Aliquam varius sapien in posuere fermentum. Vivamus gravida ullamcorper imperdiet. Cras elit mauris, ultrices quis justo hendrerit, elementum bibendum eros. Cras porta risus a fringilla fringilla. Suspendisse eu nisi non urna efficitur elementum id et lectus. 
-          </p>
-        </div>
+          className="triple-img"
+          style={
+            Object {
+              "backgroundImage": "url(https://live.staticflickr.com/1735/40811146810_d47a60d20c.jpg)",
+              "backgroundSize": "cover",
+            }
+          }
+        />
       </div>
     </div>
-  </div>
+    <div
+      className="col-2 hero-image"
+    >
+      <h1
+        className="primary bold width"
+      >
+        Transcribe is
+        <br />
+        <span
+          className="primary light"
+        >
+          your solution to modern communication
+        </span>
+      </h1>
+      <p
+        className="secondary "
+      >
+        The application is a communication platform for realtime chat between two or more users. We utilized Google Translate API to translate one user's preferred language to the other user's preferred language. Essentially, users can communicate easily and effectively in multiple languages at the same time.
+      </p>
+      <div
+        className="hero-buttons"
+      >
+        <button
+          className="btn btn-primary"
+        >
+          chat
+        </button>
+        <a
+          href="https://github.com/401n14/finFrontend"
+        >
+          <button
+            className="btn btn-outline-white"
+          >
+            Learn  more
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>,
+  <hr />,
+  <div
+    className="next-steps my-5"
+  >
+    <h2
+      className="my-5 text-center"
+      id="about"
+    >
+      Learn more about us!
+    </h2>
+    <div
+      className="d-flex justify-content-between row"
+    >
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/james-ad"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-link fa-w-16 mr-2"
+              data-icon="link"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+            James Dunn - Lead Developer
+          </a>
+        </h6>
+        <p>
+          I’m a lifelong musician. I’ve played guitar and drums since I was a youngster. I received my M.A. in Philosophy from Brandeis University in Massachusetts
+        </p>
+      </div>
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/NadyaIlinskiy"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-link fa-w-16 mr-2"
+              data-icon="link"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+            Nadya Ilinskaya - DevOps
+          </a>
+        </h6>
+        <p>
+          I’m breaking software for living, but really enjoy learning how to build it. 
+        </p>
+      </div>
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/all1124"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-link fa-w-16 mr-2"
+              data-icon="link"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+            Anna Li - Project Manager
+          </a>
+        </h6>
+        <p>
+          I’m originally from Ohio, moved to Washington 3 years ago.
+        </p>
+      </div>
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/malemu17"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-link fa-w-16 mr-2"
+              data-icon="link"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+            Meron Sibani - Full Stack Developer
+          </a>
+        </h6>
+        <p>
+            I am originally from Ethiopia moved to States three years ago. Currently I am raising my beautiful daughter
+        </p>
+      </div>
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/Martinbalke"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-link fa-w-16 mr-2"
+              data-icon="link"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+            Martin Balke - Lead Designer
+          </a>
+        </h6>
+        <p>
+            I love solving problems. I’m a professional chef and baker currently. I love going to farmers markets and cooking with all of the great ingredients in Washington
+        </p>
+      </div>
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/mts513"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-link fa-w-16 mr-2"
+              data-icon="link"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+            Morgan Shaw - Lead Tester 
+          </a>
+        </h6>
+        <p>
+           I am from Texas & graduated from Texas A&M University. I currently work for Zillow Group. I am a proud parent of a Saint Bernard & a black cat
+        </p>
+      </div>
+    </div>
+  </div>,
   <footer
     className="bg-light p-3 text-center"
   >
-    <div
-      className="logo"
-    />
-    <p>
-      We're awesome team of developers!
+    <p
+      style={
+        Object {
+          "marginTop": "2.5em",
+        }
+      }
+    >
+      <b>
+        nightJAMMM
+      </b>
+       team © CodeFellows | 2020
     </p>
-  </footer>
-</div>
+  </footer>,
+]
 `;

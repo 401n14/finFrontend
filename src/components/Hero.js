@@ -1,23 +1,34 @@
 import React from "react";
 
-import logo from "../assets/logo.svg";
+function Hero(props) {
+  
 
-const Hero = () => (
-  <div className="text-center hero my-5">
-    <img className="mb-3 app-logo" src={logo} alt="React logo" width="120" />
-    <h1 className="mb-4">Transcribe is AWESOME!</h1>
+  return (
+    <div className="contain">
+      <div className="col-2 mobile">{props.children[0]}</div>
+      <div className="col-2 hero-image">
+        <h1 className="primary bold width">
+          Transcribe is
+          <br />
+          <span className="primary light">
+            your solution to modern communication
+          </span>
+        </h1>
+        <p className="secondary ">
+          The application is a communication platform for realtime chat between
+          two or more users. We utilized Google Translate API to translate one
+          user's preferred language to the other user's preferred language.
+          Essentially, users can communicate easily and effectively in multiple
+          languages at the same time.
+        </p>
+        <div className="hero-buttons">
+          {props.children[1]}
+          {props.children[2]}
+        </div>
+      </div>
+    </div>
+  );
 
-    <p className="lead">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id
-      ultricies enim. Donec sodales elit id eros lobortis tincidunt. Suspendisse
-      potenti. Nam diam nibh, sodales sed urna in, semper volutpat augue.
-      Suspendisse volutpat lorem nisi, vitae lacinia nulla aliquet eu. Duis non
-      purus convallis, rhoncus urna sed, aliquet tortor. Fusce vel sapien sed
-      metus venenatis pretium ut in neque. Donec condimentum metus sit amet nunc
-      lobortis efficitur. 
-      erat.
-    </p>
-  </div>
-);
+}
 
 export default Hero;
