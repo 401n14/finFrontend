@@ -1,0 +1,19 @@
+.emoji{
+  overflow: auto;
+  position: relative;
+  left: 75%;
+  bottom: 15%;
+  background: transparent;
+  &-x{
+    border: none;
+    outline: none;
+    font-size: 3rem;
+    background: transparent;
+  }
+ 
+  &-mart{
+    position: fixed;
+    z-index: 10;
+    bottom: 15%;
+  }
+}
