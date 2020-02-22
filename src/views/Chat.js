@@ -259,6 +259,7 @@ function Chat() {
             setMessage(e.target.value);
           }}
         />
+        
          {showEmojis ? (<span style={styles.emojiPicker}  ref={el => setShowEmojis.emojiPicker = el}>
  
  
@@ -285,19 +286,20 @@ function Chat() {
 export default Chat;
 
 
-const styles ={
+const styles={
  
-  emojiPicker: {
-     position: "absolute",
-     bottom: 10,
-     right: 0,
-     cssFloat: "right",
-     marginLeft: "200px"
-  },
   getEmojiButton: {
-   cssFloat: "right",
-   border: "none",
-   margin: 0,
-   cursor: "pointer"
- },
- }
+    cssFloat: "center",
+    border: "none",
+    margin: 0,
+   paddingLeft:1130,
+    cursor: "pointer"
+  },
+  emojiPicker: {
+    position: "absolute",
+    bottom: 10,
+    right: 0,
+    cssFloat: "right",
+    marginLeft: "200px"
+  }
+};

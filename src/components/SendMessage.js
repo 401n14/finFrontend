@@ -9,7 +9,7 @@ import React from 'react';
  */
 function SendMessage(props) {
   return (
-    <div style={{width: '300px', display: 'inline-block'}}>
+    <div>
       <div className='chat-section'>
         <input
           type='text'
