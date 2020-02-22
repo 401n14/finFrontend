@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot Test renders correctly, Snapshot 1`] = `
+exports[`Send Message Snapshot Test renders correctly, Snapshot 1`] = `
 <div>
   <div
     className="chat-section"

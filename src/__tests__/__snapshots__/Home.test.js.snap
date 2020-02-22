@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snapshot Test renders correctly, Snapshot 1`] = `
+exports[`Home page Test renders correctly, Snapshot 1`] = `
 Array [
   <div
     className="contain"
