@@ -1,3 +1,12 @@
+@mixin border($px, $color, $rad) {
+    border: $px solid $color;
+    border-radius: $rad;
+  }
+  
+  @mixin wordLetterSpacing() {
+    word-spacing: 2px;
+    letter-spacing: 1px;
+  }
 @mixin gradient-background {
   background: rgb(67,202,223);
 background: linear-gradient(90deg, rgba($color-primary,1) 35%, rgba($color-primary-dark,1) 100%);
