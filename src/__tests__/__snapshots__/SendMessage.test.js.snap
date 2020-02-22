@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Send Message Snapshot Test renders correctly, Snapshot 1`] = `
+<div>
+  <div
+    className="chat-section"
+  >
+    <input
+      className="chat-input, chat-typing input-text"
+      type="text"
+    />
+    <button
+      className="btn btn-secondary chat-btn"
+    >
+      Send Message
+    </button>
+    <svg
+      className="chat-svg"
+      fill="red"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M18 12v1H8v5l-6-6 6-6v5h8V2h2z"
+      />
+    </svg>
+  </div>
+</div>
+`;

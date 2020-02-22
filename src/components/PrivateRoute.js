@@ -1,4 +1,5 @@
 /* istanbul ignore file */
+//from Auth0 files
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Route, withRouter } from "react-router-dom";
