@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { NavLink as RouterNavLink, withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+
 
 import {
   Collapse,
@@ -72,31 +74,35 @@ const NavBar = () => {
                   tag={RouterNavLink}
                   to="/"
                   exact
-                  className='header-nav-text'
+                  className="header-nav-text"
                 >
                   Home
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink
-                  tag={RouterNavLink}
-                  to="/"
-                  exact
-                  className='header-nav-text'
-                >
-                  About Us
-                </NavLink>
+                <AnchorLink href="#about">
+                  <NavLink
+                    tag={RouterNavLink}
+                    to="/"
+                    exact
+                    className="header-nav-text"
+                  >
+                   About Us
+                  </NavLink>{' '}
+                </AnchorLink>
               </NavItem>
-              {isAuthenticated && (<NavItem>
-                <NavLink
-                  tag={RouterNavLink}
-                  to="/chat"
-                  exact
-                  className='header-nav-text'
-                >
-                  Chat
-                </NavLink>
-              </NavItem>)}
+              {isAuthenticated && (
+                <NavItem>
+                  <NavLink
+                    tag={RouterNavLink}
+                    to="/chat"
+                    exact
+                    className="header-nav-text"
+                  >
+                    Chat
+                  </NavLink>
+                </NavItem>
+              )}
             </Nav>
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (
@@ -105,7 +111,7 @@ const NavBar = () => {
                     style={navButtonColor}
                     id="qsLoginBtn"
                     className="btn btn-outline-white btn-small"
-                    value='Login'
+                    value="Login"
                     onClick={() => loginWithRedirect({})}
                   />
                 </NavItem>
@@ -147,8 +153,8 @@ const NavBar = () => {
                   <Button
                     style={navButtonColor}
                     id="qsLoginBtn"
-                    value='Login'
-                    className='btn btn-outline-white btn-small'
+                    value="Login"
+                    className="btn btn-outline-white btn-small"
                     onClick={() => loginWithRedirect({})}
                   />
                 </NavItem>

@@ -4,12 +4,11 @@
 
 
 ## BackEnd - Node Application
-TODO !!!!!!!!!!!!!  - Needs UPDATE !!!!!!!!!!!!!!!!!!!!!!!
-The backend part of our application is a NodeJS platform for realtime chat between two or more users. We utilized NodeJS, JavaScript, Google Translate API, and MongoDB. 
+The backend part of our application is a NodeJS platform for realtime chat between two or more users. 
+We utilized NodeJS, Socket.io, JavaScript and Google Translate API
 
 ## FrontEnd - React Application
-
-TODO !!!!!!!!!!!!!  - Needs UPDATE !!!!!!!!!!!!!!!!!!!!!!!
+The frontend part of our application utilizes React.js and SCSS
 
 ## Main Dependencies
 
@@ -58,21 +57,11 @@ npm run test
 ```
 
 ---------------------------------
+ 
+## Login and chat away!
 
-## Usage
-***[Provide some images of your app that shows how it can be used with brief description as title]***
+![Overview of Recent Posts](./src/assets/home_page.png)
 
-### Overview of Recent Posts
-![Overview of Recent Posts](https://via.placeholder.com/500x250)
-
-### Creating a Post
-![Post Creation](https://via.placeholder.com/500x250)
-
-### Enriching a Post
-![Enriching Post](https://via.placeholder.com/500x250)
-
-### Viewing Post Details
-![Details of Post](https://via.placeholder.com/500x250)
 
 ---------------------------------
 
