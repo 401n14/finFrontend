@@ -1,6 +1,6 @@
 .chat{
   height: 95vh;
-  margin: 5vh 0 10vh 0;
+  margin: 0 0 10vh 0;
   &:after{
     content: '';
     z-index: -20;
@@ -112,24 +112,26 @@
 .connection-information{
   position: relative;
   left:60vw;
-  bottom: 5vh;
-  max-width: 30rem;
+  bottom: 1vh;
+  max-width: 25rem;
   margin-top: 2rem;
   text-align: center;
   z-index: 1000;
   h3{
    @include gradient-text;
-  font-size: 2rem;
+  font-size: 1.25rem;
+  margin: -5px;
+
   }
   select{
     margin: 1rem;
     color: white;
     @include gradient-background;
     text-align: center;
-    width: 30rem;
+    width: 25rem;
     cursor: pointer;
-    font-size: 2rem;
-    height: 4rem;
+    font-size: 1.5rem;
+    height: 3rem;
     border: 1px solid $color-primary-dark;
     &:active,
     &:focus,

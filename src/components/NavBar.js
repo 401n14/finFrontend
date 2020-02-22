@@ -81,7 +81,7 @@ const NavBar = () => {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <AnchorLink className="header-nav-text" href="#about">
+                <AnchorLink className="header-nav-text special" href="#about">
                   About Us
                 </AnchorLink>
               </NavItem>
