@@ -81,15 +81,8 @@ const NavBar = () => {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <AnchorLink href="#about">
-                  <NavLink
-                    tag={RouterNavLink}
-                    to="/"
-                    exact
-                    className="header-nav-text"
-                  >
-                   About Us
-                  </NavLink>{' '}
+                <AnchorLink className="header-nav-text" href="#about">
+                  About Us
                 </AnchorLink>
               </NavItem>
               {isAuthenticated && (
