@@ -12,7 +12,7 @@ describe('Chat Message Test', () => {
     let pic = 'Image';
     let groupMessage = [timestamp, message, user, pic]
     let none = '';
-        it('renders', () => {
+        it('renders with message information', () => {
             const wrapper = shallow(
                 <ChatMessages>
                     {groupMessage}
@@ -20,8 +20,8 @@ describe('Chat Message Test', () => {
                     );
                 expect(wrapper).toBeTruthy();
     });
-    
-        it('renders', () => {
+
+        it('renders without message information', () => {
             const wrapper = shallow(
                 <ChatMessages>
                     {none}

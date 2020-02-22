@@ -17,7 +17,7 @@ const  mockLogin=()=>{
   }
 
 
-describe('Snapshot Test', () => {
+describe('Home page Test', () => {
     beforeEach(() => {
         // Mock the Auth0 hook and make it return a logged in state
         useAuth0.mockReturnValue({
@@ -28,7 +28,7 @@ describe('Snapshot Test', () => {
     it('renders correctly, Snapshot', () => {
         const page = renderer.create(<BrowserRouter><Home /></BrowserRouter>).toJSON();
         expect(page).toMatchSnapshot();
-        
+
     });
 });
 

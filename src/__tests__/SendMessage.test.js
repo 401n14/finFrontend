@@ -7,7 +7,7 @@ import renderer from 'react-test-renderer';
 
 configure({adapter:new Adapter()});
 
-describe('Snapshot Test', () => {
+describe('Send Message Snapshot Test', () => {
     it('renders correctly, Snapshot', () => {
         const page = renderer.create(<SendMessage />).toJSON();
         expect(page).toMatchSnapshot();

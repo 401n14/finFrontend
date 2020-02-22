@@ -8,7 +8,7 @@ configure({adapter:new Adapter()});
 describe('Header Test', () => {
    let welcome = 'welcome'
     let activeUsers = 'Captain'
-        it('renders', () => {
+        it('renders with props', () => {
             const wrapper = shallow(
                 <Header>
                     {welcome}
