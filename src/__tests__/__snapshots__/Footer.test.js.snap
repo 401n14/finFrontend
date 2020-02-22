@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Test renders correctly, Snapshot 1`] = `
+<footer
+  className="bg-light p-3 text-center"
+>
+  <p
+    style={
+      Object {
+        "marginTop": "2.5em",
+      }
+    }
+  >
+    <b>
+      nightJAMMM
+    </b>
+     team © CodeFellows | 2020
+  </p>
+</footer>
+`;

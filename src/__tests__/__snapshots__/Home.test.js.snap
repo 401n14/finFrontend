@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home page Test renders correctly, Snapshot 1`] = `
+Array [
+  <div
+    className="contain"
+  >
+    <div
+      className="col-2 mobile"
+    >
+      <div
+        className="triple mobile"
+      >
+        <div
+          className="triple-img"
+          style={
+            Object {
+              "backgroundImage": "url(https://live.staticflickr.com/5813/30931763465_c7cc26e743_n.jpg)",
+              "backgroundSize": "cover",
+            }
+          }
+        />
+        <div
+          className="triple-img"
+          style={
+            Object {
+              "backgroundImage": "url(https://live.staticflickr.com/8568/15486971303_fe3c25285d.jpg)",
+              "backgroundSize": "cover",
+            }
+          }
+        />
+        <div
+          className="triple-img"
+          style={
+            Object {
+              "backgroundImage": "url(https://live.staticflickr.com/1735/40811146810_d47a60d20c.jpg)",
+              "backgroundSize": "cover",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="col-2 hero-image"
+    >
+      <h1
+        className="primary bold width"
+      >
+        Transcribe is
+        <br />
+        <span
+          className="primary light"
+        >
+          your solution to modern communication
+        </span>
+      </h1>
+      <p
+        className="secondary "
+      >
+        The application is a communication platform for realtime chat between two or more users. We utilized Google Translate API to translate one user's preferred language to the other user's preferred language. Essentially, users can communicate easily and effectively in multiple languages at the same time.
+      </p>
+      <div
+        className="hero-buttons"
+      >
+        <a
+          href="/chat"
+          onClick={[Function]}
+        >
+          <button
+            className="btn btn-primary"
+          >
+            chat
+          </button>
+        </a>
+        <a
+          href="https://github.com/401n14/finFrontend"
+        >
+          <button
+            className="btn btn-outline-white"
+          >
+            Learn  more
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>,
+  <hr />,
+  <div
+    className="next-steps my-5"
+  >
+    <h2
+      className="my-5 text-center"
+      id="about"
+    >
+      Learn more about us!
+    </h2>
+    <div
+      className="d-flex justify-content-between row"
+    >
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/james-ad"
+          >
+            James Dunn - Lead Developer
+          </a>
+        </h6>
+        <p>
+          I’m a lifelong musician. I’ve played guitar and drums since I was a youngster. I received my M.A. in Philosophy from Brandeis University in Massachusetts
+        </p>
+      </div>
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/NadyaIlinskiy"
+          >
+            Nadya Ilinskaya - DevOps
+          </a>
+        </h6>
+        <p>
+          I’m breaking software for living, but really enjoy learning how to build it. 
+        </p>
+      </div>
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/all1124"
+          >
+            Anna Li - Project Manager
+          </a>
+        </h6>
+        <p>
+          I’m originally from Ohio, moved to Washington 3 years ago.
+        </p>
+      </div>
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/malemu17"
+          >
+            Meron Sibani - Full Stack Developer
+          </a>
+        </h6>
+        <p>
+            I am originally from Ethiopia moved to States three years ago. Currently I am raising my beautiful daughter
+        </p>
+      </div>
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/Martinbalke"
+          >
+            Martin Balke - Lead Designer
+          </a>
+        </h6>
+        <p>
+            I love solving problems. I’m a professional chef and baker currently. I love going to farmers markets and cooking with all of the great ingredients in Washington
+        </p>
+      </div>
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/mts513"
+          >
+            Morgan Shaw - Lead Tester 
+          </a>
+        </h6>
+        <p>
+           I am from Texas & graduated from Texas A&M University. I currently work for Zillow Group. I am a proud parent of a Saint Bernard & a black cat
+        </p>
+      </div>
+    </div>
+  </div>,
+]
+`;
