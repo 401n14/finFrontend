@@ -6,17 +6,25 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({adapter:new Adapter()});
 
 describe('Chat Message Test', () => {
-            let timestamp = '12:53';
-            let message = 'Hello';
-            let user = 'Captain';
-            let pic = 'Image';
+    let timestamp = '12:53';
+    let message = 'Hello';
+    let user = 'Captain';
+    let pic = 'Image';
+    let groupMessage = [timestamp, message, user, pic]
+    let none = '';
         it('renders', () => {
             const wrapper = shallow(
                 <ChatMessages>
-                    {timestamp}
-                    {message}
-                    {user}
-                    {pic}
+                    {groupMessage}
+                </ChatMessages>
+                    );
+                expect(wrapper).toBeTruthy();
+    });
+    
+        it('renders', () => {
+            const wrapper = shallow(
+                <ChatMessages>
+                    {none}
                 </ChatMessages>
                     );
                 expect(wrapper).toBeTruthy();

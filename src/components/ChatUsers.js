@@ -1,3 +1,6 @@
+/* istanbul ignore file */
+//Ignoring this file for testing b/c it is not used
+
 import React from 'react';
 
 /**

@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+//from Auth0 files
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
