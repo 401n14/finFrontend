@@ -24,7 +24,25 @@ const  mockLogin=()=>{
 const  mockLogout=()=>{
     auth=false
   }
+  let backgroundColor = '';
+  let color = '';
+  
+  function mockhandleScroll(e){
+    if(window.innerWidth < 768){
+     backgroundColor = `rgba(255,255,255,1)`
+    }else{
+      if (window.pageYOffset < 25) {
+        backgroundColor = `rgba(255,255,255,0)`
+        color= 'white';
+      }
+      if (window.pageYOffset < 100 && window.pageYOffset > 25) {
+        color = '#0975A7';
+        backgroundColor =`rgba(255,255,255,0.5)`;
+      }
+      if(window.pageYOffset > 100){backgroundColor = `rgba(255,255,255,1)` }
+    }
 
+  }
 describe('Nav Tests', () => {
     beforeEach(() => {
         auth = true;
@@ -84,6 +102,7 @@ describe('Nav Tests', () => {
         logoutBtn.simulate('click');
         expect(auth).toBeFalsy();
 });
+
   });
   describe('If User is not logged in', () => {
       beforeEach(() => {
@@ -106,13 +125,13 @@ describe('Nav Tests', () => {
             loginBtn.simulate('click')
             expect(auth).toBeTruthy();
     });
-    xit('Login Button 2', () => {
+    it('Login Button 2', () => {
             let wrapper = mount(
                 <BrowserRouter>
                 <Nav>
                 </Nav>
                 </BrowserRouter>)
-            let loginBtn = wrapper.find('#qsLoginBtn').at(2);
+            let loginBtn = wrapper.find('#qsLoginBtn').at(1);
             expect(auth).toBeFalsy();
             loginBtn.simulate('click')
             expect(auth).toBeTruthy();

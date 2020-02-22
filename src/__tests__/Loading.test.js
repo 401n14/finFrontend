@@ -5,7 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 configure({adapter:new Adapter()});
 
-describe('Loading Test', () => {
+describe('Loading page Test', () => {
     const wrapper = shallow(
 <Loading />
     );

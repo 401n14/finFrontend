@@ -2,6 +2,7 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 
+import "./styles/styles.scss";
 
 import PrivateRoute from "./components/PrivateRoute";
 import Loading from "./components/Loading";

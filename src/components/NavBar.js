@@ -29,7 +29,8 @@ const NavBar = () => {
   useEffect( () => {
     window.addEventListener('scroll', handleScroll);
   }, []);
-
+  //struggling to test this using enzyme
+/* istanbul ignore next */
   function handleScroll(e){
     if(window.innerWidth < 768){
       setTransparent({ backgroundColor: `rgba(255,255,255,1)` })
