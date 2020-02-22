@@ -9,7 +9,9 @@ class Content extends Component {
   render() {
     return (
       <div className="next-steps my-5">
-        <h2 className="my-5 text-center">Learn more about awesome us!</h2>
+        <h2 className="my-5 text-center" id="about">
+          Learn more about us!
+        </h2>
         <Row className="d-flex justify-content-between">
           {contentData.map((col, i) => (
             <Col key={i} md={5} className="mb-4">

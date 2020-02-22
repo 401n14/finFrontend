@@ -15,7 +15,7 @@ Array [
           className="triple-img"
           style={
             Object {
-              "backgroundImage": "url(https://i.imgur.com/QFtYvKT.jpg)",
+              "backgroundImage": "url(https://live.staticflickr.com/5813/30931763465_c7cc26e743_n.jpg)",
               "backgroundSize": "cover",
             }
           }
@@ -24,7 +24,7 @@ Array [
           className="triple-img"
           style={
             Object {
-              "backgroundImage": "url(https://i.imgur.com/QFtYvKT.jpg)",
+              "backgroundImage": "url(https://live.staticflickr.com/8568/15486971303_fe3c25285d.jpg)",
               "backgroundSize": "cover",
             }
           }
@@ -33,7 +33,7 @@ Array [
           className="triple-img"
           style={
             Object {
-              "backgroundImage": "url(https://i.imgur.com/QFtYvKT.jpg)",
+              "backgroundImage": "url(https://live.staticflickr.com/1735/40811146810_d47a60d20c.jpg)",
               "backgroundSize": "cover",
             }
           }
@@ -57,8 +57,7 @@ Array [
       <p
         className="secondary "
       >
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-         
+        The application is a communication platform for realtime chat between two or more users. We utilized Google Translate API to translate one user's preferred language to the other user's preferred language. Essentially, users can communicate easily and effectively in multiple languages at the same time.
       </p>
       <div
         className="hero-buttons"
@@ -73,11 +72,15 @@ Array [
             chat
           </button>
         </a>
-        <button
-          className="btn btn-outline-white"
+        <a
+          href="https://github.com/401n14/finFrontend"
         >
-          Learn  more
-        </button>
+          <button
+            className="btn btn-outline-white"
+          >
+            Learn  more
+          </button>
+        </a>
       </div>
     </div>
   </div>,
@@ -87,8 +90,9 @@ Array [
   >
     <h2
       className="my-5 text-center"
+      id="about"
     >
-      Learn more about awesome us!
+      Learn more about us!
     </h2>
     <div
       className="d-flex justify-content-between row"
@@ -100,13 +104,13 @@ Array [
           className="mb-3"
         >
           <a
-            href="https://"
+            href="https://github.com/james-ad"
           >
-            Transcribe is awesome
+            James Dunn - Lead Developer
           </a>
         </h6>
         <p>
-          Integer eget ex porta, interdum sem quis, mattis ligula. Aliquam varius sapien in posuere fermentum. Vivamus gravida ullamcorper imperdiet. Cras elit mauris, ultrices quis justo hendrerit, elementum bibendum eros. Cras porta risus a fringilla fringilla. Suspendisse eu nisi non urna efficitur elementum id et lectus. 
+          I’m a lifelong musician. I’ve played guitar and drums since I was a youngster. I received my M.A. in Philosophy from Brandeis University in Massachusetts
         </p>
       </div>
       <div
@@ -116,13 +120,13 @@ Array [
           className="mb-3"
         >
           <a
-            href="https://"
+            href="https://github.com/NadyaIlinskiy"
           >
-            Transcribe is great
+            Nadya Ilinskaya - DevOps
           </a>
         </h6>
         <p>
-          Integer eget ex porta, interdum sem quis, mattis ligula. Aliquam varius sapien in posuere fermentum. Vivamus gravida ullamcorper imperdiet. Cras elit mauris, ultrices quis justo hendrerit, elementum bibendum eros. Cras porta risus a fringilla fringilla. Suspendisse eu nisi non urna efficitur elementum id et lectus. 
+          I’m breaking software for living, but really enjoy learning how to build it. 
         </p>
       </div>
       <div
@@ -132,13 +136,13 @@ Array [
           className="mb-3"
         >
           <a
-            href="https://"
+            href="https://github.com/all1124"
           >
-            Transcribe is outstanding
+            Anna Li - Project Manager
           </a>
         </h6>
         <p>
-          Integer eget ex porta, interdum sem quis, mattis ligula. Aliquam varius sapien in posuere fermentum. Vivamus gravida ullamcorper imperdiet. Cras elit mauris, ultrices quis justo hendrerit, elementum bibendum eros. Cras porta risus a fringilla fringilla. Suspendisse eu nisi non urna efficitur elementum id et lectus.
+          I’m originally from Ohio, moved to Washington 3 years ago.
         </p>
       </div>
       <div
@@ -148,13 +152,45 @@ Array [
           className="mb-3"
         >
           <a
-            href="https://"
+            href="https://github.com/malemu17"
           >
-            Transcribe is unbelievable
+            Meron Sibani - Full Stack Developer
           </a>
         </h6>
         <p>
-           Integer eget ex porta, interdum sem quis, mattis ligula. Aliquam varius sapien in posuere fermentum. Vivamus gravida ullamcorper imperdiet. Cras elit mauris, ultrices quis justo hendrerit, elementum bibendum eros. Cras porta risus a fringilla fringilla. Suspendisse eu nisi non urna efficitur elementum id et lectus. 
+            I am originally from Ethiopia moved to States three years ago. Currently I am raising my beautiful daughter
+        </p>
+      </div>
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/Martinbalke"
+          >
+            Martin Balke - Lead Designer
+          </a>
+        </h6>
+        <p>
+            I love solving problems. I’m a professional chef and baker currently. I love going to farmers markets and cooking with all of the great ingredients in Washington
+        </p>
+      </div>
+      <div
+        className="mb-4 col-md-5"
+      >
+        <h6
+          className="mb-3"
+        >
+          <a
+            href="https://github.com/mts513"
+          >
+            Morgan Shaw - Lead Tester 
+          </a>
+        </h6>
+        <p>
+           I am from Texas & graduated from Texas A&M University. I currently work for Zillow Group. I am a proud parent of a Saint Bernard & a black cat
         </p>
       </div>
     </div>

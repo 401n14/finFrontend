@@ -30,6 +30,32 @@
   .container {
     flex-direction: column; } }
 
+@keyframes disappear {
+  0% {
+    display: none;
+    opacity: 1; }
+  10% {
+    display: block;
+    opacity: 0.9; }
+  20% {
+    display: block;
+    opacity: 0.7; }
+  40% {
+    display: block;
+    opacity: 0.5; }
+  55% {
+    display: block;
+    opacity: 0.4; }
+  70% {
+    display: block;
+    opacity: 0.3; }
+  95% {
+    display: block;
+    opacity: 0.1; }
+  100% {
+    display: none;
+    opacity: 0; } }
+
 .btn {
   display: inline-block;
   border-radius: 3rem;
@@ -148,6 +174,40 @@
         transform: scale(1.1) translateY(-30px);
         box-shadow: 0.5rem 0.5rem 1rem -0.6rem #88C6E4; }
 
+.input {
+  position: absolute;
+  transform: all .3s;
+  margin-top: 2rem; }
+  .input-label {
+    font-family: "PT Sans", sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    padding: .8rem 1.5rem;
+    position: relative;
+    left: 2rem;
+    border-radius: .3rem;
+    background-color: #1FA3B7;
+    box-shadow: 0px 0.2rem 1rem -0.6rem rgba(0, 0, 0, 0.75); }
+  .input-text {
+    text-align: center;
+    width: 30rem;
+    height: 4rem;
+    font-family: "PT Sans", sans-serif;
+    color: #0975A7;
+    font-size: 1.5rem;
+    box-shadow: 0px 0.2rem 1rem -0.6rem rgba(0, 0, 0, 0.75);
+    border: none; }
+    .input-text:active, .input-text:focus {
+      border: none;
+      outline: none; }
+  .input-svg {
+    width: 2rem;
+    fill: #1FA3B7;
+    position: relative;
+    right: 4rem;
+    top: .5rem;
+    opacity: 40%; }
+
 p {
   font-size: 1.5rem; }
 
@@ -170,7 +230,17 @@ li, a {
   font-family: "PT Sans", sans-serif; }
 
 .chat {
-  margin-top: 15vh; }
+  height: 95vh;
+  margin: 0 0 10vh 0; }
+  .chat:after {
+    content: '';
+    z-index: -20;
+    display: block;
+    clip-path: polygon(56% 24%, 87% 23%, 100% 0, 100% 100%, 0 100%, 0 26%, 28% 40%);
+    height: 20rem;
+    background: #43cadf;
+    background: linear-gradient(90deg, #1fa3b7 35%, #0975a7 100%);
+    margin-bottom: 10px; }
   .chat .users {
     height: 95vh;
     background: #F9F8F8;
@@ -186,20 +256,26 @@ li, a {
       font-family: "PT Sans", sans-serif;
       color: #1FA3B7;
       margin-left: 1rem; }
+  .chat-section {
+    margin-top: 20vh; }
   .chat-btn {
     width: 14rem;
-    height: 5rem; }
+    height: 5rem;
+    position: relative;
+    right: 10rem;
+    bottom: 1rem;
+    box-shadow: 0 1px 2px 0 #080808; }
     .chat-btn:hover {
       background-color: #1FA3B7 !important; }
   .chat-svg {
     fill: white;
-    width: 1rem;
+    width: 1.25rem;
     opacity: 80%;
-    left: -4rem;
-    bottom: -1rem;
+    left: -14rem;
+    bottom: -.25rem;
     position: relative; }
   .chat-information {
-    margin-left: 3rem;
+    margin-left: 20rem;
     max-width: 70rem;
     padding: .5rem;
     border-radius: 1rem; }
@@ -208,13 +284,13 @@ li, a {
     .chat-information-user {
       display: flex;
       align-items: center;
-      width: 25rem; }
+      justify-content: space-between;
+      width: 30rem; }
     .chat-information-avatar {
       height: 4rem;
       width: 4rem;
       border-radius: 50%;
       box-shadow: 0px 0.5rem 0.5rem -0.3rem rgba(0, 0, 0, 0.75);
-      margin-right: 1rem;
       background-size: cover;
       background-position: center; }
     .chat-information-username {
@@ -229,14 +305,81 @@ li, a {
     .chat-information-message {
       font-family: "PT Sans", sans-serif;
       font-size: 2rem;
-      position: relative;
-      left: 5rem;
       max-width: 60rem; }
   .chat-typing {
     padding-top: 5rem;
-    width: 70%;
+    width: 50%;
     height: 10rem;
-    margin: 0 5%; }
+    font-size: 2rem;
+    margin: 0 5%;
+    margin-left: 25vw;
+    position: relative;
+    bottom: 10px; }
+
+.connection-information {
+  position: relative;
+  left: 60vw;
+  bottom: 1vh;
+  max-width: 25rem;
+  margin-top: 2rem;
+  text-align: center;
+  z-index: 1000; }
+  .connection-information h3 {
+    background: linear-gradient(90deg, #43cadf 35%, #0975a7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.25rem;
+    margin: -5px; }
+  .connection-information select {
+    margin: 1rem;
+    color: white;
+    background: #43cadf;
+    background: linear-gradient(90deg, #1fa3b7 35%, #0975a7 100%);
+    text-align: center;
+    width: 25rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    height: 3rem;
+    border: 1px solid #0975A7; }
+    .connection-information select:active, .connection-information select:focus, .connection-information select:hover {
+      outline: none;
+      color: white !important; }
+    .connection-information select > option {
+      padding: 1rem; }
+
+.overflow {
+  max-height: 40vh;
+  min-height: 30vh;
+  overflow: auto; }
+
+.user-messages {
+  position: absolute;
+  top: 30vh;
+  width: 12vw;
+  height: 40vh; }
+  .user-messages .chat-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem;
+    margin-top: 2rem; }
+  .user-messages h2 {
+    color: #0975A7;
+    border-bottom: 1px solid #0975A7;
+    margin-bottom: 5px; }
+  .user-messages h1 {
+    background: linear-gradient(90deg, #43cadf 35%, #0975a7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation-iteration-count: 1;
+    animation: disappear 4s ease-in forwards; }
+  .user-messages p {
+    background: linear-gradient(90deg, #43cadf 35%, #0975a7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; }
 
 html {
   font-size: 62.5%; }
@@ -261,6 +404,13 @@ li, a {
 .dropdown {
   position: fixed;
   right: 5rem; }
+  .dropdown-header, .dropdown-item, .dropdown-profile {
+    color: #1FA3B7 !important;
+    font-family: "PT Sans", sans-serif !important; }
+    .dropdown-header:hover, .dropdown-item:hover, .dropdown-profile:hover {
+      background: #43cadf;
+      background: linear-gradient(90deg, #1fa3b7 35%, #0975a7 100%);
+      color: white !important; }
 
 .navbar {
   background: rgba(0, 0, 0, 0);
@@ -312,6 +462,12 @@ li, a {
     .header-nav-text {
       color: #0975A7 !important;
       font-weight: bold !important; }
+      .header-nav-text:hover {
+        transform: scale(1.1);
+        background: linear-gradient(90deg, #43cadf 35%, #0975a7 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent; }
     .header-nav li {
       list-style: none;
       transition: all .3s; }
@@ -346,10 +502,16 @@ li, a {
         margin: 5%;
         border: 1px solid #0975A7; }
 
+.special {
+  padding: 1rem !important; }
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   html {
     font-size: 45%; }
+  body {
+    font-family: "PT Sans", sans-serif;
+    color: #1FA3B7; }
   .contain {
     margin-bottom: 2rem; }
   .mobile {
@@ -361,11 +523,38 @@ li, a {
     min-width: 100%;
     min-height: 100%;
     clip-path: none; }
+  .chat-btn {
+    right: -29rem; }
+  .connection-information {
+    max-width: 20rem;
+    display: flex; }
+    .connection-information h3 {
+      position: fixed;
+      z-index: 1000;
+      font-size: 1.25rem;
+      top: 9rem;
+      left: -2px;
+      margin: .5rem;
+      width: 22rem; }
+    .connection-information > select {
+      text-align: center;
+      width: 15rem;
+      position: fixed;
+      padding: 0px;
+      font-size: 1.25rem;
+      z-index: 10000;
+      top: 10rem;
+      left: 1rem; }
+  .chat-information {
+    margin-left: 30%;
+    margin-top: 2vh; }
   .navbar-toggler {
     height: 5rem;
     width: 7rem;
     border: 1px solid #1FA3B7;
-    cursor: pointer; }
+    cursor: pointer;
+    position: fixed;
+    right: 10px; }
     .navbar-toggler:active, .navbar-toggler:focus {
       outline: none; }
     .navbar-toggler::after {
@@ -373,12 +562,18 @@ li, a {
       display: block;
       padding: 5%;
       height: 1%;
-      border-bottom: 1px solid #1FA3B7; } }
+      border-bottom: 1px solid #1FA3B7; }
+  .overflow {
+    margin-top: 15vh; }
+  .user-messages {
+    width: 20vw; } }
 
 @media only screen and (min-width: 2400px) {
   /* For mobile phones: */
   html {
-    font-size: 100%; } }
+    font-size: 100%; }
+  .connection-information {
+    bottom: 0; } }
 
 @media only screen and (min-width: 2400px) {
   /* For mobile phones: */
