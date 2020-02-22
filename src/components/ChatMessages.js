@@ -12,9 +12,16 @@ function ChatMessages(props) {
         <div className='overflow'>{props.children && props.children.length ? props.children.map((item, ind) => {
             let itemArray= (item.split('*'));
             let timestamp = itemArray[0];
+
+           
+            
+            let showEmojis = itemArray[1];
+            console.log(user);
+
             let message = itemArray[3];
             let user = itemArray[2];
             let pic = itemArray[1];
+
 
             return (
                 <div key={ind} className={`${props.className}-information`}>
@@ -31,6 +38,7 @@ function ChatMessages(props) {
                     <p className={`${props.className}-information-message`}>
                         {message}
                     </p>
+                        <span className={`${props.className}-information-emoji`}>{showEmojis}</span>
                 </div>
             );
         }) : ''}

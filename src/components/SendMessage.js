@@ -17,6 +17,7 @@ function SendMessage(props) {
           value={props.value}
           onKeyUp={props.onKeyUp}
           onChange={props.onChange}
+          onSelect={props.onSelect}
         />
         <button className='btn btn-secondary chat-btn' onClick={props.onClick}>
           Send Message
