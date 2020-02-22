@@ -1,0 +1,37 @@
+.contain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.col-2 {
+  flex: 1 46%;
+  min-width: 46%;
+  height: 100px;
+  margin-bottom: 10%; 
+}
+
+.col-3 {
+  flex: 1 32%;
+  height: 100px;
+  margin-bottom: 10%; 
+}
+
+.col-4 {
+  flex: 1 24%;
+  height: 100px;
+  margin-bottom: 2%; 
+}
+
+.col-5 {
+  flex: 1 19%;
+  height: 100px;
+  margin-bottom: 2%; 
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}

@@ -2,7 +2,16 @@ import React, { useState, useEffect, useCallback } from 'react';
 import useSockets from '../utils/useSockets';
 import { useAuth0 } from '../react-auth0-spa.js';
 import FormSelect from '../components/FormSelect';
+import Header from '../components/Header';
+import SendMessage from '../components/SendMessage';
+import ChatMessages from '../components/ChatMessages';
+import ChatUsers from '../components/ChatUsers';
+
 import data from '../components/data/data';
+//emoji set up
+
+import "emoji-mart/css/emoji-mart.css";
+import { Picker } from 'emoji-mart';
 
 
 
@@ -20,22 +29,21 @@ const fetch = require('node-fetch');
 
 
 function Chat() {
+  const [showEmojis, setShowEmojis] = useState(false);
   const [name, setName] = useState(null);
   const [welcome, setWelcome] = useState('Welcome!');
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [language, setLanguage] = useState('English');
   const [translation, setTranslation] = useState('en');
   const [groupMessage, setGroupMessage] = useState([]);
   const [userGroup, setUserGroup] = useState({});
-
-  /**
-   * @param { object } end points or events  socket, socketVal and isConnected 
-   *  fetch data from backend socket server 
-   */
+  const [activeUsers, setActiveUsers] = useState('');
   const { socket, socketVal, isConnected } = useSockets(
     'https://final-tcp-server.herokuapp.com/',
     'broadcast'
   );
+
+ 
 
   /**
    * @param { object}  user 
@@ -55,7 +63,6 @@ function Chat() {
     );
     let json = await res.text();
     setTranslation(json);
-   
   }, [language]);
 
 
@@ -70,21 +77,16 @@ function Chat() {
     async data => {
       let res = await fetch(
         'https://translation-server.herokuapp.com/translate?message=' +
-          data.message +
-          '&translation=' +
-          data.translation
+        data.message +
+        '&translation=' +
+        data.translation
       );
       let json = await res.text();
 
       socketVal.message = await json;
-
+      let timeStamp = new Date();
       let msg = [...groupMessage];
-
-      msg.push(
-        <p>
-          {socketVal.name}: {socketVal.message}
-        </p>
-      );
+      msg.push(`${timeStamp.toLocaleString()} ${socketVal.name.toUpperCase()}: ${socketVal.message}`);
 
       setGroupMessage(msg);
     },
@@ -94,6 +96,29 @@ function Chat() {
   const handleEnter = e => {
     if (e.key === 'Enter') {
       sendMessage(e);
+      setShowEmojis(false)
+    }
+  };
+
+  let  addEmoji = e => {
+    console.log(e.native);
+    setMessage(message + e.native);
+    let emoji = e.native;
+    setShowEmojis({
+      text: showEmojis + emoji
+    });
+  };
+
+
+  let closeMenu = e  => {
+    //console.log('come on here', e.emojiPicker);
+    if (setShowEmojis.emojiPicker !== null && !setShowEmojis.emojiPicker.contains(e.target)) {
+      setShowEmojis(
+        {
+          showEmojis: false
+        },
+        () => document.removeEventListener("click", closeMenu)
+      );
     }
   };
 
@@ -111,6 +136,7 @@ function Chat() {
       socket.emit('message', { name, message });
     }
     setMessage('');
+    //setShowEmojis(false)
   };
 
 /**
@@ -154,14 +180,13 @@ function Chat() {
   useEffect(() => {
     if (socketVal.userGroup) {
       setUserGroup(socketVal.userGroup);
-      console.log('USER GROUP: ', userGroup);
     }
   }, [socketVal.userGroup, userGroup]);
 
   useEffect(() => {
     setName(user.nickname);
     if (name) {
-      socket.emit("username", {name});
+      socket.emit('username', { name });
     }
   }, [name, socket, user.nickname]);
 
@@ -170,7 +195,6 @@ function Chat() {
     if (socketVal.user) {
       setWelcome(`${socketVal.user} has joined the chat!`);
     }
-
   }, [socketVal.user]);
 
 
@@ -179,7 +203,7 @@ function Chat() {
   }, [getLanguage]);
 
   useEffect(() => {
-   if (socketVal.name && socketVal.message) {
+    if (socketVal.name && socketVal.message) {
       (async () => {
         await translateMessage({ message: socketVal.message, translation });
       })();
@@ -192,39 +216,88 @@ function Chat() {
  */
  
 
+  useEffect(() => {
+    const messages = document.querySelector('.overflow');
+    messages.scrollTop = messages.scrollHeight;
+
+  }, [groupMessage]);
+
+  useEffect(() => {
+    let list = Object.keys(userGroup).map((user, index) => <p key={index} className='secondary'>{userGroup[user]}</p>)
+    setActiveUsers(list);
+  }, [userGroup])
+
   return (
-    <div className='Chat'>
-      <h1 className='chat-heading'>{welcome}</h1>
-      <h3>
-        {isConnected
-          ? 'You are connected to the chat'
-          : 'You are not connected to the chat'}
-      </h3>
+    <div>
+      <Header>{welcome}{activeUsers}</Header>
 
-      <FormSelect
-        list={data.Languages}
-        onChange={e => {
-          setLanguage(e.target.value);
-        }}
-      />
+      <div className='chat'>
+        <div className='connection-information'>
+          <h3 className=' primary bold'>
+            {isConnected
+              ? 'You are connected to the chat'
+              : 'You are not connected to the chat'}
+          </h3>
+         
+          <FormSelect
+            list={data.Languages}
+            onChange={e => {
+              setLanguage(e.target.value);
+            }}
+          />
 
-      <div className='chat-section'>
-        <button className='chat-button' onClick={sendMessage}>
-          Send Message
-        </button>
-        <input
-          type='text'
-          className='chat-input'
+        </div>
+        <div className='chat-messages' id='chat'>
+          <ChatMessages className='chat'>{groupMessage}</ChatMessages>
+
+        </div>
+        <SendMessage
+          onClick={sendMessage}
           value={message}
           onKeyUp={handleEnter}
           onChange={e => {
             setMessage(e.target.value);
           }}
         />
+         {showEmojis ? (<span style={styles.emojiPicker}  ref={el => setShowEmojis.emojiPicker = el}>
+ 
+ 
+ <Picker  
+        onSelect={addEmoji}
+        emojiTooltip={true}
+        title="weChat"
+      
+        />
+
+</span>) : (
+ <p style={styles.getEmojiButton}  onClick={setShowEmojis}>
+     {String.fromCodePoint(0x1f60a)}
+     </p>
+   )}
+
+
       </div>
-      <p className='chat-output'>{groupMessage}</p>
     </div>
+
   );
 }
 
 export default Chat;
+
+
+const styles ={
+ 
+  emojiPicker: {
+     position: "absolute",
+     bottom: 10,
+     right: 0,
+     cssFloat: "right",
+     marginLeft: "200px"
+  },
+  getEmojiButton: {
+   cssFloat: "right",
+   border: "none",
+   margin: 0,
+   cursor: "pointer"
+ },
+ }
