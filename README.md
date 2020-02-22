@@ -76,3 +76,7 @@ npm run test
 aka **nightJAMMM team**
 
 <center>© CodeFellows | 2020</center>
+
+
+
+* ![UML](UML.JPG)
