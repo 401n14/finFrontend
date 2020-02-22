@@ -285,7 +285,7 @@ function Chat() {
 
 export default Chat;
 
-
+// style for emoji 
 const styles={
  
   getEmojiButton: {
@@ -300,6 +300,6 @@ const styles={
     bottom: 10,
     right: 0,
     cssFloat: "right",
-    marginLeft: "200px"
+    marginLeft: "201px"
   }
 };

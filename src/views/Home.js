@@ -7,10 +7,20 @@ import Button from '../components/Button';
 import Content from "../components/Content";
 import { useAuth0 } from "../react-auth0-spa";
 
+
+// import image from url 
 let images = [
   'https://i.imgur.com/QFtYvKT.jpg',
   'https://i.imgur.com/QFtYvKT.jpg',
   'https://i.imgur.com/QFtYvKT.jpg'];
+
+
+  /**
+   * @function Home 
+   * @return takes authenticated user to chat page based of auth0 
+   * onClick loginWithRedirect if success 
+   * two button link to chat and  Content and Fragment component 
+   */
 
 
   const Home = () => {

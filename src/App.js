@@ -22,6 +22,12 @@ import './styles/styles.scss'
 import initFontAwesome from "./utils/initFontAwesome";
 initFontAwesome();
 
+/**
+ * @function App 
+ * @return loading 
+ * link to chat and profile  routes
+ */
+
 const App = () => {
   const { loading } = useAuth0();
 

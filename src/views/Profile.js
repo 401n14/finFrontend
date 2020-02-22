@@ -5,6 +5,12 @@ import Highlight from "../components/Highlight";
 import Loading from "../components/Loading";
 import { useAuth0 } from "../react-auth0-spa";
 
+
+/**
+ * @function profile
+ * user profile from auth0 and change 
+ * user image , username user email profile to json format 
+ */
 const Profile = () => {
   const { loading, user } = useAuth0();
 
