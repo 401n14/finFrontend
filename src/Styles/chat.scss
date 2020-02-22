@@ -1,0 +1,17 @@
+@import './mixins';
+
+button {
+  background: white;
+  font-size: .9rem;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.chat-heading {
+  margin: 40px 0px 30px;
+  @include wordLetterSpacing();
+}
+
+.chat-output {
+  font-size: 1.2rem;
+}

@@ -23,7 +23,7 @@ describe('Snapshot Test', () => {
 });
 
 describe('Form Tests', () => {
-    it('renders without a user & calls the Loading component', () => {
+    it('Renders a drop down list when given props', () => {
         let wrapper = mount(<FormSelect
             list={options.Languages}
             />)
