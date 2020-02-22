@@ -8,6 +8,8 @@ import config from "./auth_config.json";
 import history from "./utils/history";
 
 
+
+
 const onRedirectCallback = appState => {
   history.push(
     appState && appState.targetUrl

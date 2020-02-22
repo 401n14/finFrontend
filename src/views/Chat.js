@@ -136,7 +136,7 @@ function Chat() {
       socket.emit('message', { name, message });
     }
     setMessage('');
-    //setShowEmojis(false)
+    setShowEmojis(false)
   };
 
 /**
