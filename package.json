@@ -1,23 +1,36 @@
 {
-  "name": "final",
+  "name": "auth0-react-01-login",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^7.2.1",
-    "google-translate": "^3.0.0",
-    "node-fetch": "^2.6.0",
-    "node-sass": "^4.13.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.3.1"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom --verbose --coverage",
+    "eject": "react-scripts eject",
+    "scss": "node-sass --watch src/styles -o public/styles"
+  },
+  "dependencies": {
+    "@auth0/auth0-spa-js": "^1.0.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "express": "^4.16.4",
+    "highlight.js": "^9.15.6",
+    "morgan": "^1.9.1",
+    "node-fetch": "^2.6.0",
+    "node-sass": "^4.13.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "3.0.1",
+    "react-test-renderer": "^16.12.0",
+    "reactstrap": "^8.0.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^9.4.0"
   },
   "eslintConfig": {
     "extends": "react-app"
