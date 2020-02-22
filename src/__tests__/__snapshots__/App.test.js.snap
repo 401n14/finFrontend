@@ -64,7 +64,7 @@ Array [
               className="nav-item"
             >
               <a
-                className="header-nav-text"
+                className="header-nav-text special"
                 href="#about"
                 onClick={[Function]}
               >
